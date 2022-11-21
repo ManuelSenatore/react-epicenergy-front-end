@@ -1,13 +1,13 @@
 export const SET_USER = "SET_USER";
 export const SET_TOKEN = "SET_TOKEN";
+export const LOG_OUT = "LOG_OUT"
 
 export const setUser = (user) => ({
   type: SET_USER,
   payload: user,
 });
-export const setToken = (token) => ({
-  type: SET_TOKEN,
-  payload: token,
+export const logout = () => ({
+  type: LOG_OUT
 });
 
 export const logIn = (obj) => {

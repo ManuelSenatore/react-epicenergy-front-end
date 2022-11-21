@@ -1,6 +1,6 @@
 import React , { useEffect , useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useDispatch , useSelector } from "react-redux";
 import { logIn } from "../redux/actions/actions";
 
@@ -14,10 +14,18 @@ function LoginComponent() {
     const navigate = useNavigate()
 
     useEffect ( () => {
-        if ( user.token !== "" ) {
-            navigate("/home")
+        if ( user.token !== undefined) {
+            navigate("/")
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[] );
+
+    useEffect ( () => {
+        if ( user.token !== undefined) {
+            navigate("/")
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[user.token] );
 
 
 
@@ -50,7 +58,7 @@ function LoginComponent() {
                 // navigate('/home')
             }}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label>Username</Form.Label>
                     <Form.Control
                         value={formObj.username}
                         onChange={(e) => handleForm("username", e.target.value)}
@@ -73,6 +81,11 @@ function LoginComponent() {
                     Submit
                 </Button>
             </Form>
+
+            <Link to = "/signup">
+            <p>Se non sei registrato clicca a qui.</p>
+            </Link>
+
         </div>
     );
 }
