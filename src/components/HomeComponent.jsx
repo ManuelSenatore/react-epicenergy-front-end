@@ -1,33 +1,30 @@
 import React , { useEffect , useState } from "react";
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch , useSelector } from 'react-redux'
 import { useNavigate } from "react-router-dom"
-import { Button} from "react-bootstrap";
-import { getClientList } from "../redux/actions/actions";
+import { Container } from "react-bootstrap";
+
 
 function HomeComponent() {
 
-    const dispatch = useDispatch()
-    const user = useSelector(state => state.user.user)
-    const clientList = useSelector(state => state.client.clientList)
-    const token = useSelector(state => state.user.user.token)
+    const dispatch = useDispatch ()
+    const user = useSelector ( state => state.user.user )
 
-    const navigate = useNavigate()
+    const token = useSelector ( state => state.user.user.token )
+
+    const navigate = useNavigate ()
 
     useEffect ( () => {
-        if ( user.token === undefined) {
-            navigate("/login")
-        }else {
-            dispatch(getClientList(token))
+        if ( user.token === undefined ) {
+            navigate ( "/login" )
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[user.token] );
-
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    } , [ user.token ] );
 
 
     return (
-        <div>
+        <Container fluid>
 
-        </div>
+        </Container>
     )
 }
 

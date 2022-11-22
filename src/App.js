@@ -9,28 +9,27 @@ import NavbarComponent from "./components/NavbarComponent";
 import SettingsComponent from "./components/SettingsComponent";
 import ClientPostComponent from "./components/ClientPostComponent";
 import AddressPostComponent from "./components/AddressPostComponent";
+import ClientiComponent from "./components/ClientiComponent";
 
 function App() {
   return (
     <BrowserRouter>
-      <Container fluid style={{
-        maxWidth: 100 + "vw",
-        minWidth: 100 + "vw"
-      }}>
-        <Row className="d-flex">
-          <Col xs= {3}>
+      <Container fluid >
+        <Row className="d-flex justify-content-between mainContainer">
+          <Col className="p-0" xs= {2}>
           <NavbarComponent />
           </Col>
           <Col xs={6}>
-          <Routes>
-            <Route path="/" element={<HomeComponent />} />
-            <Route path="/login" element={<LoginComponent />} />
-            <Route path="/signup" element={<SignUpComponent />} />
-            <Route path="/postClient" element={<ClientPostComponent />} />
-            <Route path="/postAddress" element={<AddressPostComponent />} />
-          </Routes>
+              <Routes>
+                <Route path="/" element={<HomeComponent />} />
+                <Route path="/login" element={<LoginComponent />} />
+                <Route path="/signup" element={<SignUpComponent />} />
+                <Route path="/postClient" element={<ClientPostComponent />} />
+                <Route path="/postAddress" element={<AddressPostComponent />} />
+                <Route path="/clienti" element={<ClientiComponent />} />
+              </Routes>
           </Col>
-          <Col xs={3}>
+          <Col className="p-0" xs={2}>
           <SettingsComponent />
           </Col>
         </Row>

@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ada93c9c-294f-48f6-9feb-63a05a8663fa" name="Changes" comment="">
+    <list default="true" id="5a23b2ff-3535-4ece-8740-5769e3fe9d1a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/CardClienteComponent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ClientiComponent.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MyDatalistInput.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddressPostComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddressPostComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientPostComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientPostComponent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomeComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InputComuniComponent.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavbarComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavbarComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SettingsComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SettingsComponent.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +29,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2HqppRBnOFGObv1ng0eOfRS2gee" />
+  <component name="ProjectId" id="2HtaoklYstqioCIMIJNeL3YNSSv" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -47,7 +58,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="start" type="js.build_tools.npm">
+    <configuration name="START" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="start" />
       <node-interpreter value="project" />
@@ -58,12 +69,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ada93c9c-294f-48f6-9feb-63a05a8663fa" name="Changes" comment="" />
-      <created>1669022651020</created>
+      <changelist id="5a23b2ff-3535-4ece-8740-5769e3fe9d1a" name="Changes" comment="" />
+      <created>1669107011347</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1669022651020</updated>
-      <workItem from="1669022652394" duration="2531000" />
+      <updated>1669107011347</updated>
+      <workItem from="1669107013288" duration="26440000" />
     </task>
     <servers />
   </component>

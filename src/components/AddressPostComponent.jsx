@@ -1,12 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import InputComuniComponent from "./InputComuniComponent";
+import MyDatalistInput from "./MyDatalistInput";
 import { useNavigate } from "react-router-dom";
 
-function AddressPostComponent() {
+function AddressPostComponent(props) {
   const navigate = useNavigate();
+  const [ comuni , setComuni ] = useState ( [] );
   const token = useSelector((state) => state.user.user.token);
+
+  const maker = () => {
+    let arr = []
+
+    comuni.map ( (e , i) => {
+      let obj = {
+        id : e.nome + i ,
+        value : e.nome
+      }
+      return arr.push ( obj )
+    } )
+    return arr
+  }
 
   const [formObj, setFormObj] = useState({
     // oggetto per la compilazione del form
@@ -28,6 +42,29 @@ function AddressPostComponent() {
   };
 
   const getComuniList = async () => {
+    const baseEndpoint = "http://localhost:8080/api/comuni";
+    const header = {
+      Authorization : `Bearer ${ token }` ,
+    };
+
+    try {
+      const response = await fetch ( baseEndpoint , {
+        method : "GET" ,
+        headers : header ,
+      } );
+      if ( response.ok ) {
+        const data = await response.json ();
+        setComuni ( data );
+        console.log ( data );
+      } else {
+        alert ( "Error fetching results" );
+      }
+    } catch ( error ) {
+      console.log ( error );
+    }
+  };
+
+  const createNewIndirizzo = async () => {
     const baseEndpoint = "http://localhost:8080/api/indirizzi/new-raw";
     const header = {
       Authorization: `Bearer ${token}`,
@@ -42,7 +79,7 @@ function AddressPostComponent() {
       });
       if (response.ok) {
         const data = await response.json();
-        navigate("/");
+        props.setAddressFlag(false)
         console.log(data);
       } else {
         alert("Error fetching results");
@@ -53,13 +90,13 @@ function AddressPostComponent() {
   };
 
   return (
-    <div>
-      <Form
-        onSubmit={(e) => {
-          e.preventDefault();
-          getComuniList();
-        }}
-      >
+    <div style={
+      {
+        backgroundColor: "aliceblue",
+        borderRadius: "5px",
+        padding: "20px",
+      }
+    }>
         <Form.Group className="mb-3">
           <Form.Label>Road</Form.Label>
           <Form.Control
@@ -90,11 +127,21 @@ function AddressPostComponent() {
           />
         </Form.Group>
 
-        <InputComuniComponent handleForm={handleForm} />
-        <Button variant="success" type="submit">
+              <MyDatalistInput
+                  handleForm={handleForm}
+                  handleFormName={"nomeComune"}
+                  triggerFetch={getComuniList}
+                  arrayComuniList={maker(comuni)}
+                  placeDataList={"Municipality"}
+                  labelDataList={"Select your municipality"}
+                  choice={""}
+              />
+
+        <Button className="d-block mx-auto my-2" onClick={() => {
+          createNewIndirizzo ()
+        }} variant="success" type="submit">
           Add
         </Button>
-      </Form>
     </div>
   );
 }
