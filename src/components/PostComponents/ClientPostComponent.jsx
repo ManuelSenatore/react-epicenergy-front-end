@@ -1,8 +1,8 @@
-import React , { useEffect , useState } from "react";
+import React , { useState } from "react";
 import { Button , Form } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import AddressPostComponent from "./AddressPostComponent";
-import MyDatalistInput from "./MyDatalistInput";
+import MyDatalistInput from "../GetComponents/MyDatalistInput";
 import { useNavigate } from "react-router-dom";
 
 function ClientPostComponent() {
@@ -147,7 +147,13 @@ function ClientPostComponent() {
     console.log(maker2(userList))
 
     return (
-        <div>
+        <div style={
+            {
+                color: "royalblue",
+                borderRadius: "5px",
+                padding: "20px",
+            }
+        }>
             <Form
                 onSubmit={ (e) => {
                     e.preventDefault ();
@@ -200,8 +206,17 @@ function ClientPostComponent() {
                     />
                 </div>
 
-                <Button className="d-block mx-auto" variant={ addressFlag ? "danger" : "primary" }
-                        onClick={ () => setAddressFlag ( !addressFlag ) }>
+                <Button className={addressFlag ? "d-block mx-auto" : "d-block infoButtonCliente mx-auto"}
+                        variant={ addressFlag ? "danger" : "primary" }
+                        onClick={ () => setAddressFlag ( !addressFlag ) }
+                        style={{
+                            borderLeft: "none",
+                            borderRight: "none",
+                            borderBottom: "1px solid white",
+                            backgroundColor: "white",
+                            color: "royalblue"
+                        }}
+                >
                     Aggiungi nuovo indirizzo
                 </Button>
 
@@ -293,7 +308,10 @@ function ClientPostComponent() {
                     />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button
+                    className={"w-25 d-block mx-auto"}
+                    variant="primary"
+                    type="submit">
                     Submit
                 </Button>
             </Form>

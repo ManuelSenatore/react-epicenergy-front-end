@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import MyDatalistInput from "./MyDatalistInput";
+import MyDatalistInput from "../GetComponents/MyDatalistInput";
 import { useNavigate } from "react-router-dom";
 
 function AddressPostComponent(props) {
@@ -92,7 +92,7 @@ function AddressPostComponent(props) {
   return (
     <div style={
       {
-        backgroundColor: "aliceblue",
+        color: "royalblue",
         borderRadius: "5px",
         padding: "20px",
       }
@@ -137,10 +137,10 @@ function AddressPostComponent(props) {
                   choice={""}
               />
 
-        <Button className="d-block mx-auto my-2" onClick={() => {
-          createNewIndirizzo ()
-        }} variant="success" type="submit">
-          Add
+        <Button  className={"w-25 d-block mx-auto my-2"} onClick={() => {
+          createNewIndirizzo()
+        }} variant="primary" type="button">
+          Aggiungi indirizzo
         </Button>
     </div>
   );

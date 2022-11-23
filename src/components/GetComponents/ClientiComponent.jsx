@@ -1,7 +1,7 @@
 import React , { useEffect } from 'react';
 import { useDispatch , useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getClientList } from "../redux/actions/actions";
+import { getClientList } from "../../redux/actions/actions";
 import { Col , Container , Row } from "react-bootstrap";
 import CardClienteComponent from "./CardClienteComponent";
 
@@ -30,10 +30,10 @@ const ClientiComponent = () => {
         <Container fluid>
             <Row className="d-flex flex-wrap justify-content-between">
                 {
-                    clientList.map( (clienti, index) => {
+                    clientList.map( (cliente, index) => {
                         return (
                             <Col className="d-flex justify-content-center" key={index} >
-                                <CardClienteComponent cliente={clienti} />
+                                <CardClienteComponent cliente={cliente} index={index} arrLen={clientList.length} />
                             </Col>
                         )
                     })

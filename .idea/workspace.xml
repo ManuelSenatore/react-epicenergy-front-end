@@ -5,18 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a23b2ff-3535-4ece-8740-5769e3fe9d1a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/CardClienteComponent.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ClientiComponent.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MyDatalistInput.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/GetComponents/CardClienteComponent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddressPostComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddressPostComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ClientPostComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ClientPostComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddressPostComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostComponents/AddressPostComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CardClienteComponent.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientPostComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostComponents/ClientPostComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientiComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetComponents/ClientiComponent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomeComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InputComuniComponent.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoginComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostComponents/LoginComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MyDatalistInput.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetComponents/MyDatalistInput.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/NavbarComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavbarComponent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SettingsComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SettingsComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignUpComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostComponents/SignUpComponent.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,19 +38,19 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "configurable.group.other"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.other&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -56,6 +58,13 @@
         <entry key="com.haulmont.rcb.reactInspector" value="false" />
       </map>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/PostComponents" />
+      <recent name="$PROJECT_DIR$/src/components/GetComponents" />
+      <recent name="$PROJECT_DIR$/src/components" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="START" type="js.build_tools.npm">
@@ -75,6 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1669107011347</updated>
       <workItem from="1669107013288" duration="26440000" />
+      <workItem from="1669152053127" duration="18313000" />
     </task>
     <servers />
   </component>

@@ -50,7 +50,13 @@ function SignUpComponent() {
   };
 
   return (
-    <div>
+    <div style={
+      {
+        color: "royalblue",
+        borderRadius: "5px",
+        padding: "20px",
+      }
+    }>
       <Form
         onSubmit={(e) => {
           e.preventDefault();
@@ -96,8 +102,8 @@ function SignUpComponent() {
             placeholder="Password"
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
+        <Button className={"w-25 d-block mx-auto my-2"} variant="primary" type="submit">
+          REGISTRATI
         </Button>
       </Form>
     </div>

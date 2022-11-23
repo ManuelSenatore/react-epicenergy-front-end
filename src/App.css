@@ -1,5 +1,11 @@
 /*MAIN CONTAINER*/
-
+* {
+    box-sizing: border-box;
+}
+.mainContainer {
+    max-height: 100vh;
+    overflow: auto;
+}
 
 /*DATALIST*/
 /*FINESTRA CHE SI APRE DEL DATALIST*/
@@ -20,28 +26,106 @@
 }
 
 /*CARD CLIENTE*/
-.listGroupCardCliente {
-    border: 1px solid gainsboro!important;
-    border-radius: 5px;
+.openInfoTrue {
+    border: none;
+    border-bottom:10px solid royalblue;
+    margin: 10px auto;
+    width: 100%;
+    cursor: pointer;
 }
+.openInfoTrue:hover {
+    width: 50%;
+}
+.openInfo {
+    margin: 0 auto;
+    position: relative;
+    top: 5px;
+    border:10px groove gainsboro;
+    border-left: none;
+    border-top: none;
+    height: 30px;
+    width: 30px;
+    transform: rotate(45deg);
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    cursor: pointer;
+}
+.openInfo:hover {
+    border:10px groove royalblue;
+    border-left: none;
+    border-top: none;
+    transform: scale(1.2) rotate(45deg);
+}
+.cardBorderStyle {
+    border-top: none!important;
+    border-bottom: none!important;
+}
+
+/*POST CLIENTI*/
 .infoButtonCliente:hover {
-    border-bottom: 1px solid red!important;
+    border-bottom: 1px solid royalblue!important;
+}
+.borderBottomInfo {
+    border-bottom: 1px solid royalblue!important;
 }
 
 /*NAVBAR*/
 .navbarContainer {
+    background-color: gainsboro;
     height: 100vh;
-    box-shadow: 1px 0 10px gray;
+    box-shadow: 1px 0 10px gainsboro;
     position: sticky;
     top: 0;
 }
 
+.segnalino {
+    height: 40px;
+    width: 40px;
+    border: 10px solid royalblue;
+    position: relative;
+    bottom: 40px;
+    left: 48px;
+    border-right: none;
+    border-bottom: none;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transform: rotate(315deg);
+}
+
+.boxShadowSelected {
+    box-shadow: 0 0 3px royalblue;
+}
+.boxShadowSelected:focus {
+    background-color: aliceblue;
+}
+.boxShadowSelected:active {
+    background-color: greenyellow!important;
+}
+.boxShadowSelected:hover {
+    background-color: #dcebff !important
+}
+
 /*SETTINGS*/
 .settingsContainer {
+    background-color: gainsboro;
     height: 100vh;
-    box-shadow: -1px 0 10px gray;
+    box-shadow: -1px 0 10px gainsboro;
     position: sticky;
     top: 0;
 }
+.segnalino2 {
+    height: 40px;
+    width: 40px;
+    border: 10px solid royalblue;
+    position: relative;
+    bottom: 40px;
+    left: -48px;
+    border-right: none;
+    border-bottom: none;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transform: rotate(135deg);
+}
+
 
 /*HOME*/

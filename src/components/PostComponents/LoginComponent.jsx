@@ -2,7 +2,7 @@ import React , { useEffect , useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom"
 import { useDispatch , useSelector } from "react-redux";
-import { logIn } from "../redux/actions/actions";
+import { logIn } from "../../redux/actions/actions";
 
 
 function LoginComponent() {
@@ -50,7 +50,13 @@ function LoginComponent() {
 
 
     return (
-        <div>
+        <div style={
+            {
+                color: "royalblue",
+                borderRadius: "5px",
+                padding: "20px",
+            }
+        }>
             <Form onSubmit={(e) => {
                 e.preventDefault()
                 dispatch(logIn(formObj))
@@ -58,14 +64,14 @@ function LoginComponent() {
                 // navigate('/home')
             }}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Username</Form.Label>
+                    <Form.Label>Nome utente</Form.Label>
                     <Form.Control
                         value={formObj.username}
                         onChange={(e) => handleForm("username", e.target.value)}
                         type="text"
-                        placeholder="Enter username" />
+                        placeholder="Inserisci il nome utente scelto in fase di registrazione" />
                     <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
+                        Non condividere mai la password con nessuno.
                     </Form.Text>
                 </Form.Group>
 
@@ -75,15 +81,15 @@ function LoginComponent() {
                         value={formObj.password}
                         onChange={(e) => handleForm("password",e.target.value)}
                         type="password"
-                        placeholder="Password" />
+                        placeholder="Inserisci la tua password" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
+                <Button className={"w-25 d-block mx-auto my-2"} variant="primary" type="submit">
+                    ACCEDI
                 </Button>
             </Form>
 
             <Link to = "/signup">
-            <p>Se non sei registrato clicca a qui.</p>
+            <p className={"w-25 d-block text-center mx-auto my-2"}>Se non sei registrato clicca a qui.</p>
             </Link>
 
         </div>
