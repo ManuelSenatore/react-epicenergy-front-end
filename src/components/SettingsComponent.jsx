@@ -3,7 +3,8 @@ import { Col , Container , Row } from "react-bootstrap";
 import { Button , Form } from "react-bootstrap";
 import { useSelector } from 'react-redux'
 import { useLocation , useNavigate } from "react-router-dom";
-
+import {FiUserPlus} from "react-icons/fi"
+import {MdOutlineAddLocationAlt} from "react-icons/md"
 function SettingsComponent() {
 
     const navigate = useNavigate ()
@@ -19,6 +20,7 @@ function SettingsComponent() {
                         location.pathname === "/login" ||
                         location.pathname === "/signup" || (
                             <>
+                                <FiUserPlus className= "d-block mx-auto " style={{fontSize : "3rem"}} color={location.pathname === "/postClient" ? "royalblue" : "black" } />
                                 <Button
                                     variant={"light"}
                                     className={location.pathname === "/postClient" ? "d-block w-100 boxShadowSelected" : "d-block w-100"}
@@ -40,6 +42,7 @@ function SettingsComponent() {
                                         </div>
                                     )
                                 }
+                                <MdOutlineAddLocationAlt className= "d-block mx-auto " style={{fontSize : "3rem"}} color={location.pathname === "/postAddress" ? "royalblue" : "black" }/>
                                 <Button
                                     variant={"light"}
                                     className={location.pathname === "/postAddress" ? "d-block w-100 boxShadowSelected" : "d-block w-100"}

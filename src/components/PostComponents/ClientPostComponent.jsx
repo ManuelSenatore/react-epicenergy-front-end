@@ -1,14 +1,16 @@
 import React , { useState } from "react";
 import { Button , Form } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import AddressPostComponent from "./AddressPostComponent";
 import MyDatalistInput from "../GetComponents/MyDatalistInput";
 import { useNavigate } from "react-router-dom";
+import { getUserList, setUserList } from "../../redux/actions/actions";
 
 function ClientPostComponent() {
     const token = useSelector ( (state) => state.user.user.token );
+    const userList = useSelector ( (state) => state.user.userList );
+    const dispatch = useDispatch();
     const [ indirizzi , setIndirizzi ] = useState ( [] );
-    const [ userList , setUserList ] = useState ([]);
     const [ addressFlag , setAddressFlag ] = useState ( false );
     const navigate = useNavigate();
 
@@ -28,7 +30,7 @@ function ClientPostComponent() {
     const maker2 = () => {
         let arr = []
 
-        userList.map( (e) => {
+        userList?.map( (e) => {
             let obj = {
                 id : e.id,
                 value : "Username: " + e.username + " | Email: " + e.email
@@ -91,29 +93,6 @@ function ClientPostComponent() {
         }
     };
 
-    const getUserList = async () => {
-        const baseEndpoint = "http://localhost:8080/api/users";
-        const header = {
-            Authorization : `Bearer ${ token }` ,
-        };
-
-        try {
-            const response = await fetch ( baseEndpoint , {
-                method : "GET" ,
-                headers : header ,
-            } );
-            if ( response.ok ) {
-                const data = await response.json ();
-                setUserList ( data );
-                console.log ( "qui user data" );
-                console.log ( data );
-            } else {
-                alert ( "Error fetching results" );
-            }
-        } catch ( error ) {
-            console.log ( error );
-        }
-    };
 
     const postUpClient = async (obj) => {
         const baseEndpoint = "http://localhost:8080/api/clienti/new-raw";
@@ -133,7 +112,7 @@ function ClientPostComponent() {
             if (response.ok) {
                 const data = await response.json();
                 console.log(data);
-                navigate("/")
+                navigate("/clienti")
             } else {
                 alert("Error fetching results");
             }
@@ -144,8 +123,12 @@ function ClientPostComponent() {
 
     console.log(formObj)
     console.log("qui maker 2")
-    console.log(maker2(userList))
+    console.log("nel cu " + userList)
+    
 
+    const dispatchUserList = () => {
+        dispatch(getUserList(token))
+    }
     return (
         <div style={
             {
@@ -164,7 +147,7 @@ function ClientPostComponent() {
                     <MyDatalistInput
                         handleForm={ handleForm }
                         handleFormName={ "userId" }
-                        triggerFetch={ getUserList }
+                        triggerFetch={ dispatchUserList }
                         arrayComuniList={ maker2 ( userList ) }
                         placeDataList={ "User ID" }
                         labelDataList={ "Select your user" }
