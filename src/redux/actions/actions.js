@@ -3,6 +3,7 @@ export const SET_TOKEN = "SET_TOKEN";
 export const LOG_OUT = "LOG_OUT";
 export const SET_CLIENTLIST = "SET_CLIENTLIST";
 export const SET_USERLIST = "SET_USERLIST";
+export const SET_CLIENT_BY_USERLIST = "SET_CLIENT_BY_USERLIST";
 
 export const setUser = (user) => ({
   type: SET_USER,
@@ -21,6 +22,10 @@ export const setClientList = (clientList) => ({
 export const setUserList = (userList) => ({
   type: SET_USERLIST,
   payload: userList,
+})
+export const setClientByUserList = (clientByUserList) => ({
+  type: SET_CLIENT_BY_USERLIST,
+  payload: clientByUserList
 })
 
 
@@ -72,6 +77,31 @@ export const getClientList = (key) => {
         dispatch(setClientList(data));
     
 
+        console.log(data);
+      } else {
+        alert("Error fetching results");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const getClientListFromUser = (key,id) => {
+  const baseEndpoint = `http://localhost:8080/api/clienti/user/${id}`;
+    console.log("eseguo get client list");
+  const header = {
+    Authorization: `Bearer ${key}`,
+  };
+  return async (dispatch, getState) => {
+    try {
+      const response = await fetch(baseEndpoint, {
+        method: "GET",
+        headers: header,
+      });
+      if (response.ok) {
+        const data = await response.json();
+        dispatch(setClientByUserList(data));
         console.log(data);
       } else {
         alert("Error fetching results");
