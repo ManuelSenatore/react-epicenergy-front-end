@@ -10,6 +10,7 @@ import SettingsComponent from "./components/SettingsComponent";
 import ClientPostComponent from "./components/PostComponents/ClientPostComponent";
 import AddressPostComponent from "./components/PostComponents/AddressPostComponent";
 import ClientiComponent from "./components/GetComponents/ClientiComponent";
+import UserComponent from "./components/GetComponents/UserComponent";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/postClient" element={<ClientPostComponent />} />
                 <Route path="/postAddress" element={<AddressPostComponent />} />
                 <Route path="/clienti" element={<ClientiComponent />} />
+                <Route path="/utenti" element={<UserComponent />} />
               </Routes>
           </Col>
           <Col className="p-0" xs={2}>
