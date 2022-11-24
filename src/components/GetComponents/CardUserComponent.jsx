@@ -52,7 +52,6 @@ const CardUserComponent = (props) => {
         }
         border="primary"
         style={{
-          width: "100%",
           borderRadius: 0,
         }}
       >
@@ -61,16 +60,16 @@ const CardUserComponent = (props) => {
           {props.user.id + " " + props.user.nomeCompleto}
         </Card.Header>
         <Card.Body>
-          <ListGroup className="list-group-flush d-flex flex-row justify-content-between">
-            <ListGroup.Item className="borderBottomInfo">
+          <ListGroup className="list-group-flush d-flex flex-row justify-content-evenly flex-wrap">
+            <ListGroup.Item className="borderBottomInfo w-25">
               <b>Email</b> <br />
               {props.user.email}
             </ListGroup.Item>
-            <ListGroup.Item className="borderBottomInfo">
+            <ListGroup.Item className="borderBottomInfo w-25">
               <b>Username</b> <br />
               {props.user?.username}
             </ListGroup.Item>
-            <ListGroup.Item className="borderBottomInfo">
+            <ListGroup.Item className="borderBottomInfo w-25">
               <b>Ruolo</b> <br />
               {orgRoleType(props.user.roles)}
             </ListGroup.Item>
@@ -84,7 +83,7 @@ const CardUserComponent = (props) => {
             className={infoFlag ? "openInfoTrue" : "openInfo"}
           ></div>
           {infoFlag && (
-            <ListGroup className="list-group-flush d-flex flex-row justify-content-between">
+            <ListGroup className="list-group-flush d-flex flex-row justify-content-evenly flex-wrap">
               {clientList?.map((client, index) => {
                 return (
                   <ListGroup.Item key={index} className="borderBottomInfo w-100">

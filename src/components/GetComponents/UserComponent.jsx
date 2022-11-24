@@ -17,7 +17,7 @@ const UserComponent = () => {
 
   return (
     <Container fluid>
-      <Row className="d-flex flex-wrap justify-content-between">
+      <Row className="d-flex flex-column">
         {userList?.map((user, index) => {
           return (
             <Col className="d-flex justify-content-center" key={index}>

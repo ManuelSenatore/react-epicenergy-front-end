@@ -28,7 +28,7 @@ const ClientiComponent = () => {
 
     return (
         <Container fluid>
-            <Row className="d-flex flex-wrap justify-content-between">
+            <Row className="d-flex flex-column justify-content-between">
                 {
                     clientList.map( (cliente, index) => {
                         return (
