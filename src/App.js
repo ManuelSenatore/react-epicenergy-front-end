@@ -11,6 +11,8 @@ import ClientPostComponent from "./components/PostComponents/ClientPostComponent
 import AddressPostComponent from "./components/PostComponents/AddressPostComponent";
 import ClientiComponent from "./components/GetComponents/ClientiComponent";
 import UserComponent from "./components/GetComponents/UserComponent";
+import PostUser from "./components/PostComponents/PostUser";
+import PutCliente from "./components/PutComponents/PutCliente";
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
                 <Route path="/postAddress" element={<AddressPostComponent />} />
                 <Route path="/clienti" element={<ClientiComponent />} />
                 <Route path="/utenti" element={<UserComponent />} />
+                <Route path="/postUtenti" element={<PostUser />} />
+                <Route path="/putCliente" element={<PutCliente />} />
               </Routes>
           </Col>
           <Col className="p-0" xs={2}>
