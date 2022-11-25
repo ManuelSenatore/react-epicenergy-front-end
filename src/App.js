@@ -18,6 +18,7 @@ import { SlArrowLeft } from "react-icons/sl";
 import FattureComponent from "./components/GetComponents/FattureComponent";
 import FatturaPostComponent from "./components/PostComponents/FatturaPostComponent";
 import FatturaPutComponent from "./components/PutComponents/FatturaPutComponent";
+import PutUserComponent from "./components/PutComponents/PutUserComponent";
 
 function App() {
 
@@ -82,6 +83,7 @@ function App() {
                             <Route path="/utenti" element={ <UserComponent/> }/>
                             <Route path="/postUtenti" element={ <PostUserComponent/> }/>
                             <Route path="/putCliente" element={ <PutClienteComponent/> }/>
+                            <Route path="/putUtente" element={ <PutUserComponent/> }/>
                             <Route path="/fatture" element={ <FattureComponent/> }/>
                             <Route path="/postFatture" element={ <FatturaPostComponent/> }/>
                             <Route path="/putFattura" element={ <FatturaPutComponent/> }/>

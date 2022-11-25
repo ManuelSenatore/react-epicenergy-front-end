@@ -66,7 +66,7 @@ const ClientiComponent = () => {
               <Form.Select
                 onChange={(e) => handleForm("stringa", e.target.value)}
               >
-                <option>Cerca per: Tutti i clienti</option>
+                <option value={""}>Cerca per: Tutti i clienti</option>
                 <option value={"filter-data-inserimento"}>
                     Cerca per: Data Inserimento
                 </option>
