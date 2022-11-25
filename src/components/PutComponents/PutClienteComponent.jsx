@@ -6,7 +6,7 @@ import { getClientList , getUserList } from "../../redux/actions/actions";
 import AddressPostComponent from "../PostComponents/AddressPostComponent";
 import { useNavigate } from "react-router-dom";
 
-const PutCliente = () => {
+const PutClienteComponent = () => {
     const navigate = useNavigate()
     const userList = useSelector ( (state) => state.user.userList );
     const clienti = useSelector(state => state.client.clientList)
@@ -356,4 +356,4 @@ const PutCliente = () => {
     );
 };
 
-export default PutCliente;
+export default PutClienteComponent;

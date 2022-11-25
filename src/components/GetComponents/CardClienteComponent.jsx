@@ -1,5 +1,5 @@
 import React , { useState } from 'react';
-import { Button , Card , Col , ListGroup } from "react-bootstrap";
+import {  Card , ListGroup } from "react-bootstrap";
 
 const CardClienteComponent = (props) => {
 

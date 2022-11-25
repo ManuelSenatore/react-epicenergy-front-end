@@ -7,6 +7,7 @@ import CardClienteComponent from "./CardClienteComponent";
 import InputGroup from 'react-bootstrap/InputGroup';
 
 const ClientiComponent = () => {
+
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
   const clientList = useSelector((state) => state.client.clientList);
