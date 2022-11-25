@@ -34,15 +34,22 @@ const ClientiComponent = () => {
   };
 
   useEffect(() => {
-    if (user.token === undefined) {
-      navigate("/login");
-    } else {
-      dispatch(getClientList(token));
-      if (clientList.length > 0) {
-      }
+    if (formObj.stringa.length === 0) {
+      dispatch(getClientList(token))
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user.token]);
+  }, [formObj.stringa]);
+
+    useEffect(() => {
+        if (user.token === undefined) {
+            navigate("/login");
+        } else {
+            dispatch(getClientList(token));
+            if (clientList.length > 0) {
+            }
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [user.token]);
 
   console.log(formObj);
   console.log(clientList);
@@ -51,21 +58,20 @@ const ClientiComponent = () => {
     <Container fluid>
       <Row className="d-flex flex-column justify-content-between">
         <Col className=" w-100 d-flex">
-          <Form  onSubmit={ (e) => {
+          <Form className="w-50"  onSubmit={ (e) => {
                     e.preventDefault ();
                     dispatch(getClientListByParams(token, formObj.stringa, formObj.value, formObj.value2));
                 } }>
             <Form.Group className="mb-3">
-              <Form.Label>Cerca per:</Form.Label>
               <Form.Select
                 onChange={(e) => handleForm("stringa", e.target.value)}
               >
-                <option></option>
+                <option>Cerca per: Tutti i clienti</option>
                 <option value={"filter-data-inserimento"}>
-                  Data Inserimento
+                    Cerca per: Data Inserimento
                 </option>
-                <option value={"fatturato"}>Fatturato</option>
-                <option value={"filter-nome-cognome"}>Nome e Cognome</option>
+                <option value={"fatturato"}>Cerca per: Fatturato</option>
+                <option value={"filter-nome-cognome"}>Cerca per: Nome e Cognome</option>
               </Form.Select>
             </Form.Group>
             {formObj.stringa === "fatturato" && (

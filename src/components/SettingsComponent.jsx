@@ -4,7 +4,7 @@ import { useLocation , useNavigate } from "react-router-dom";
 import { FiUserPlus } from "react-icons/fi"
 import { MdOutlineAddLocationAlt } from "react-icons/md"
 import { GrUserSettings } from "react-icons/gr";
-import { RiUserSettingsLine } from "react-icons/ri";
+import { RiFileSettingsLine , RiUserSettingsLine } from "react-icons/ri";
 import { BsFileEarmarkPlus } from "react-icons/bs";
 
 function SettingsComponent() {
@@ -240,6 +240,29 @@ function SettingsComponent() {
                                 {
                                     location.pathname === "/fatture" && (
                                         <>
+                                            <RiFileSettingsLine className="d-block mx-auto " style={ {fontSize : "3rem"} }
+                                                               color={ location.pathname === "/putFattura" ? "royalblue" : "black" }/>
+                                            <Button
+                                                variant={ "light" }
+                                                className={ location.pathname === "/putFattura" ? "d-block w-100 boxShadowSelected" : "d-block w-100" }
+                                                onClick={ () => navigate ( "putFattura" ) }
+                                            >
+                                                Modifica fattura
+                                            </Button>
+                                            {
+                                                location.pathname === "/putFattura" ? (
+                                                    <div className="segnalino2 me-auto"></div>
+                                                ) : (
+                                                    <div style={
+                                                        {
+                                                            height : "40px" ,
+                                                            width : "40px"
+                                                        }
+                                                    }>
+
+                                                    </div>
+                                                )
+                                            }
                                             <BsFileEarmarkPlus className="d-block mx-auto " style={ {fontSize : "3rem"} }
                                                                      color={ location.pathname === "/postFatture" ? "royalblue" : "black" }/>
                                             <Button
