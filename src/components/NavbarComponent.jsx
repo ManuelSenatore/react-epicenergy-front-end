@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../redux/actions/actions";
+import { getClientList, logout } from "../redux/actions/actions";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { FiUsers, FiHome, FiUser } from "react-icons/fi";
@@ -13,6 +13,8 @@ function NavbarComponent() {
 
   const location = useLocation();
   const user = useSelector((state) => state.user.user);
+  const token = useSelector((state) => state.user.user.token);
+
 
   const navigate = useNavigate();
 
@@ -164,7 +166,7 @@ function NavbarComponent() {
                     : "d-block w-100"
                 }
                 variant="light"
-                onClick={() => navigate("/utenti")}
+                onClick={() => {navigate("/utenti"); dispatch(getClientList(token))}}
               >
                 UTENTI
               </Button>
