@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5a23b2ff-3535-4ece-8740-5769e3fe9d1a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GetComponents/ClientiComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetComponents/ClientiComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PostComponents/FatturaPostComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostComponents/FatturaPostComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PutComponents/FatturaPutComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PutComponents/FatturaPutComponent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SettingsComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SettingsComponent.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +76,7 @@
       <workItem from="1669107013288" duration="26440000" />
       <workItem from="1669152053127" duration="18313000" />
       <workItem from="1669231754046" duration="22334000" />
-      <workItem from="1669364678770" duration="14726000" />
+      <workItem from="1669364678770" duration="21351000" />
     </task>
     <servers />
   </component>

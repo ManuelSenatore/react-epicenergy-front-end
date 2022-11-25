@@ -85,7 +85,7 @@ const FatturaPostComponent = (props) => {
             <Form.Group className="mb-3">
                 <Form.Label>Anno</Form.Label>
                 <Form.Control
-                    value={ formObj.via }
+                    value={ formObj.anno }
                     onChange={ (e) => handleForm ( "anno" , e.target.value ) }
                     type="number"
                     placeholder="Inserisci l'anno di emissione"
@@ -95,7 +95,7 @@ const FatturaPostComponent = (props) => {
             <Form.Group className="mb-3">
                 <Form.Label>Importo</Form.Label>
                 <Form.Control
-                    value={ formObj.civico }
+                    value={ formObj.importo }
                     onChange={ (e) => handleForm ( "importo" , e.target.value ) }
                     type="number"
                     placeholder="Inserisci l'importo da pagare"
