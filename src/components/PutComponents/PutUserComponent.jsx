@@ -27,7 +27,6 @@ const PutUserComponent = () => {
     nomeCompleto: "",
     email: "",
     username: "",
-    password: "",
   });
 
   const handleForm = (key, value) => {
@@ -47,7 +46,6 @@ const PutUserComponent = () => {
       nomeCompleto: findObj.nomeCompleto,
       email: findObj.email,
       username: findObj.username,
-      password: findObj.password,
     });
   };
 
@@ -143,15 +141,6 @@ const PutUserComponent = () => {
               onChange={(e) => handleForm("username", e.target.value)}
               type="text"
               placeholder="Username"
-            />
-          </Form.Group>
-          <Form.Group className="mb-3 mt-2">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-              value={formObj.password}
-              onChange={(e) => handleForm("password", e.target.value)}
-              type="password"
-              placeholder="Password"
             />
           </Form.Group>
           <Button

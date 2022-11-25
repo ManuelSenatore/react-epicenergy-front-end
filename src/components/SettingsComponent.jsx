@@ -20,6 +20,35 @@ function SettingsComponent() {
                         location.pathname === "/signup" || (
                             <Col className="d-flex flex-column justify-content-end">
                                 {
+                                    location.pathname === "/putUtente" && (
+                                        <>
+                                        <RiUserSettingsLine className="d-block mx-auto " style={ {fontSize : "3rem"} }
+                                                        color={ location.pathname === "/putUtente" ? "royalblue" : "black" }/>
+                                            <Button
+                                                variant={ "light" }
+                                                className={ location.pathname === "/putUtente" ? "d-block w-100 boxShadowSelected" : "d-block w-100" }
+                                                onClick={ () => navigate ( "/putUtente" ) }
+                                            >
+                                                Modifica utente
+                                            </Button>
+                                            {
+                                                location.pathname === "/putUtente" ? (
+                                                    <div className="segnalino2 me-auto"></div>
+                                                ) : (
+                                                    <div style={
+                                                        {
+                                                            height : "40px" ,
+                                                            width : "40px"
+                                                        }
+                                                    }>
+
+                                                    </div>
+                                                )
+                                            }
+                                        </>
+                                    )
+                                }
+                                {
                                     location.pathname === "/putCliente" && (
                                         <>
                                             <RiUserSettingsLine color={ location.pathname === "/putCliente" ? "royalblue" : "black"} className="d-block mx-auto " style={ {fontSize : "3rem"} }/>
@@ -162,7 +191,29 @@ function SettingsComponent() {
                                 {
                                     location.pathname === "/utenti" && (
                                         <>
+                                            <GrUserSettings className="d-block mx-auto " style={ {fontSize : "3rem"} }
+                                                        color={ location.pathname === "/putUtente" ? "royalblue" : "black" }/>
+                                            <Button
+                                                variant={ "light" }
+                                                className={ location.pathname === "/putUtente" ? "d-block w-100 boxShadowSelected" : "d-block w-100" }
+                                                onClick={ () => navigate ( "/putUtente" ) }
+                                            >
+                                                Modifica utente
+                                            </Button>
+                                            {
+                                                location.pathname === "/putUtente" ? (
+                                                    <div className="segnalino2 me-auto"></div>
+                                                ) : (
+                                                    <div style={
+                                                        {
+                                                            height : "40px" ,
+                                                            width : "40px"
+                                                        }
+                                                    }>
 
+                                                    </div>
+                                                )
+                                            }
                                             <FiUserPlus className="d-block mx-auto " style={ {fontSize : "3rem"} }
                                                         color={ location.pathname === "/signup" ? "royalblue" : "black" }/>
                                             <Button
