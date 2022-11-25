@@ -87,6 +87,50 @@ export const getClientList = (key) => {
   };
 };
 
+export const getClientListByParams = (key, stringa, value, value2) => {
+  let baseEndpoint;
+  if (stringa === "filter-data-inserimento") {
+    baseEndpoint = `http://localhost:8080/api/clienti/filter-data-inserimento/${value}`;
+  }
+  if (stringa === "fatturato") {
+    baseEndpoint = `http://localhost:8080/api/clienti/fatturato/${value}`;
+  }
+  if (stringa === "filter-nome-cognome") {
+    baseEndpoint = `http://localhost:8080/api/clienti/filter-nome-cognome/${value}/${value2}`;
+  }
+
+  console.log("eseguo get client list");
+  const header = {
+    Authorization: `Bearer ${key}`,
+  };
+  return async (dispatch, getState) => {
+    try {
+      const response = await fetch(baseEndpoint, {
+        method: "GET",
+        headers: header,
+      });
+      if (response.ok) {
+        const data = await response.json();
+        if (stringa === "filter-data-inserimento") {
+          dispatch(setClientList(data.content));
+        }
+        if (stringa === "fatturato") {
+          dispatch(setClientList(data.content));
+        }
+        if (stringa === "filter-nome-cognome") {
+          dispatch(setClientList(data.content));
+        } 
+
+        console.log(data);
+      } else {
+        console.log("Error fetching results");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 export const getClientListFromUser = (key,id) => {
   const baseEndpoint = `http://localhost:8080/api/clienti/user/${id}`;
     console.log("eseguo get client list");
