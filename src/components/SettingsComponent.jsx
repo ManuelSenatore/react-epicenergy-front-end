@@ -209,6 +209,35 @@ function SettingsComponent() {
                                     )
                                 }
                                 {
+                                    location.pathname === "/putFattura" && (
+                                        <>
+                                            <RiFileSettingsLine className="d-block mx-auto " style={ {fontSize : "3rem"} }
+                                                                color={ location.pathname === "/putFattura" ? "royalblue" : "black" }/>
+                                            <Button
+                                                variant={ "light" }
+                                                className={ location.pathname === "/putFattura" ? "d-block w-100 boxShadowSelected" : "d-block w-100" }
+                                                onClick={ () => navigate ( "/putFattura" ) }
+                                            >
+                                                Modifica fattura
+                                            </Button>
+                                            {
+                                                location.pathname === "/putFattura" ? (
+                                                    <div className="segnalino2 me-auto"></div>
+                                                ) : (
+                                                    <div style={
+                                                        {
+                                                            height : "40px" ,
+                                                            width : "40px"
+                                                        }
+                                                    }>
+
+                                                    </div>
+                                                )
+                                            }
+                                        </>
+                                    )
+                                }
+                                {
                                     location.pathname === "/" && (
                                         <>
                                             <MdOutlineAddLocationAlt className="d-block mx-auto " style={ {fontSize : "3rem"} }
