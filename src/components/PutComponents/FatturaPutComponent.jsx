@@ -4,6 +4,7 @@ import { useDispatch , useSelector } from "react-redux";
 import { getClientList , getFattureList } from "../../redux/actions/actions";
 import MyDatalistInput from "../GetComponents/MyDatalistInput";
 import { Button , Form , Row } from "react-bootstrap";
+import ModalDeleteComponent from "../DeleteComponents/ModalDeleteComponent";
 
 const FatturaPutComponent = () => {
     const navigate = useNavigate()
@@ -195,6 +196,8 @@ console.log(formObj)
                     </Form>
                 )
             }
+
+            <ModalDeleteComponent />
 
 
         </div>
