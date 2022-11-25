@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React , { useEffect , useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import MyDatalistInput from "../GetComponents/MyDatalistInput";
@@ -7,6 +7,14 @@ import { useNavigate } from "react-router-dom";
 function AddressPostComponent(props) {
   const [ comuni , setComuni ] = useState ( [] );
   const token = useSelector((state) => state.user.user.token);
+  const navigate = useNavigate()
+
+  useEffect ( () => {
+    if ( token === undefined) {
+      navigate("/")
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[token] );
 
   const maker = () => {
     let arr = []

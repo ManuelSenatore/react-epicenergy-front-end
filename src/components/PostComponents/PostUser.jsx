@@ -1,9 +1,18 @@
-import React , { useState } from 'react';
+import React , { useEffect , useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { Button , Form } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 const PostUser = () => {
     const navigate = useNavigate();
+    const token = useSelector((state) => state.user.user.token);
+
+    useEffect ( () => {
+        if ( token === undefined) {
+            navigate("/login")
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[token] );
 
     const [formObj, setFormObj] = useState({
         // oggetto per la compilazione del form

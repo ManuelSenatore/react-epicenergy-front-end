@@ -6,10 +6,7 @@ import { Container } from "react-bootstrap";
 
 function HomeComponent() {
 
-    const dispatch = useDispatch ()
     const user = useSelector ( state => state.user.user )
-
-    const token = useSelector ( state => state.user.user.token )
 
     const navigate = useNavigate ()
 

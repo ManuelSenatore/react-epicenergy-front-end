@@ -1,4 +1,4 @@
-import React , { useState } from "react";
+import React , { useEffect , useState } from "react";
 import { Button , Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import AddressPostComponent from "./AddressPostComponent";
@@ -13,6 +13,13 @@ function ClientPostComponent() {
     const [ indirizzi , setIndirizzi ] = useState ( [] );
     const [ addressFlag , setAddressFlag ] = useState ( false );
     const navigate = useNavigate();
+
+    useEffect ( () => {
+        if ( token === undefined) {
+            navigate("/login")
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[token] );
 
     const maker = () => {
         let arr = []
@@ -127,6 +134,8 @@ function ClientPostComponent() {
     const dispatchUserList = () => {
         dispatch(getUserList(token))
     }
+
+
     return (
         <div style={
             {

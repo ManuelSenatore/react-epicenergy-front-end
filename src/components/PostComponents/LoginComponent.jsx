@@ -13,12 +13,6 @@ function LoginComponent() {
 
     const navigate = useNavigate()
 
-    useEffect ( () => {
-        if ( user.token !== undefined) {
-            navigate("/")
-        }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[] );
 
     useEffect ( () => {
         if ( user.token !== undefined) {

@@ -1,4 +1,4 @@
-import React , { useState } from 'react';
+import React , { useEffect , useState } from 'react';
 import { Button , Form , Row } from "react-bootstrap";
 import MyDatalistInput from "../GetComponents/MyDatalistInput";
 import { useDispatch , useSelector } from "react-redux";
@@ -14,6 +14,13 @@ const PutCliente = () => {
     const [ addressFlag , setAddressFlag ] = useState ( false );
     const token = useSelector(state => state.user.user.token)
     const dispatch = useDispatch()
+
+    useEffect ( () => {
+        if ( token === undefined) {
+            navigate("/login")
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[token] );
 
     const dispatchClientList = () => {
         dispatch(getClientList(token))
