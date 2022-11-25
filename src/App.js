@@ -11,10 +11,12 @@ import ClientPostComponent from "./components/PostComponents/ClientPostComponent
 import AddressPostComponent from "./components/PostComponents/AddressPostComponent";
 import ClientiComponent from "./components/GetComponents/ClientiComponent";
 import UserComponent from "./components/GetComponents/UserComponent";
-import PostUser from "./components/PostComponents/PostUser";
-import PutCliente from "./components/PutComponents/PutCliente";
+import PostUserComponent from "./components/PostComponents/PostUserComponent";
+import PutClienteComponent from "./components/PutComponents/PutClienteComponent";
 import { useState } from "react";
 import { SlArrowLeft } from "react-icons/sl";
+import FattureComponent from "./components/GetComponents/FattureComponent";
+import FatturaPostComponent from "./components/PostComponents/FatturaPostComponent";
 
 function App() {
 
@@ -77,8 +79,10 @@ function App() {
                             <Route path="/postAddress" element={ <AddressPostComponent/> }/>
                             <Route path="/clienti" element={ <ClientiComponent/> }/>
                             <Route path="/utenti" element={ <UserComponent/> }/>
-                            <Route path="/postUtenti" element={ <PostUser/> }/>
-                            <Route path="/putCliente" element={ <PutCliente/> }/>
+                            <Route path="/postUtenti" element={ <PostUserComponent/> }/>
+                            <Route path="/putCliente" element={ <PutClienteComponent/> }/>
+                            <Route path="/fatture" element={ <FattureComponent/> }/>
+                            <Route path="/postFatture" element={ <FatturaPostComponent/> }/>
                         </Routes>
                     </Col>
                     {

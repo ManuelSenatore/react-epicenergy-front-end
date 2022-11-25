@@ -11,7 +11,7 @@ function AddressPostComponent(props) {
 
   useEffect ( () => {
     if ( token === undefined) {
-      navigate("/")
+      navigate("/login")
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[token] );

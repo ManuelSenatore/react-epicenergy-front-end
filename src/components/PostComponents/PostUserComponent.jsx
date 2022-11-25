@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button , Form } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
-const PostUser = () => {
+const PostUserComponent = () => {
     const navigate = useNavigate();
     const token = useSelector((state) => state.user.user.token);
 
@@ -119,4 +119,4 @@ const PostUser = () => {
     );
 }
 
-export default PostUser;
+export default PostUserComponent;

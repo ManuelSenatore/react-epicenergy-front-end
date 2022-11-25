@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/actions/actions";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -6,6 +6,7 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 import { FiUsers, FiHome, FiUser } from "react-icons/fi";
 import { AiOutlineLogout } from "react-icons/ai";
 import { FaRegUserCircle } from "react-icons/fa";
+import { RiBillLine } from "react-icons/ri";
 
 function NavbarComponent() {
   const dispatch = useDispatch();
@@ -176,6 +177,33 @@ function NavbarComponent() {
                     width: "40px",
                   }}
                 ></div>
+              )}
+
+              <RiBillLine
+                  className="d-block mx-auto"
+                  style={{ fontSize: "3rem" }}
+                  color={location.pathname === "/fatture" ? "royalblue" : "black"}
+              />
+              <Button
+                  className={
+                    location.pathname === "/fatture"
+                        ? "d-block w-100 boxShadowSelected"
+                        : "d-block w-100"
+                  }
+                  variant="light"
+                  onClick={() => navigate("/fatture")}
+              >
+                FATTURE
+              </Button>
+              {location.pathname === "/fatture" ? (
+                  <div className="segnalino ms-auto"></div>
+              ) : (
+                  <div
+                      style={{
+                        height: "40px",
+                        width: "40px",
+                      }}
+                  ></div>
               )}
             </>
           )}
