@@ -50,8 +50,8 @@ const CardUserComponent = (props) => {
           borderRadius: 0,
         }}
       >
-        <Card.Header className={"text-start"}>
-          user N.{props.user.id + " " + props.user.nomeCompleto}
+        <Card.Header style={{fontWeight: "bolder", color: "royalblue"}} className={"text-start"}>
+          Utente N.{props.user.id + " " + props.user.nomeCompleto}
         </Card.Header>
         <Card.Body>
 
