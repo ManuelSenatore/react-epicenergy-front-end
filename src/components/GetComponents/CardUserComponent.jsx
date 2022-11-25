@@ -5,9 +5,7 @@ import { getClientListFromUser } from "../../redux/actions/actions";
 
 const CardUserComponent = (props) => {
   const [infoFlag, setInfoFlag] = useState(false);
-  const dispatch = useDispatch();
   const token = useSelector((state) => state.user.user.token);
-  const userId = useSelector((state) => state.user.user.id);
   const [clientList, setClientList] = useState([]);
 
   const orgRoleType = (arr) => {
@@ -17,8 +15,6 @@ const CardUserComponent = (props) => {
     });
     return arr1.join(", ");
   };
-
-  console.log(clientList);
 
   const getClientListFromUser = async (id) => {
     const baseEndpoint = `http://localhost:8080/api/clienti/user/${id}`;
@@ -34,14 +30,13 @@ const CardUserComponent = (props) => {
         if (response.ok) {
           const data = await response.json();
           setClientList(data)
-          console.log(data);
         } else {
-          alert("Error fetching results");
+          console.log("Error fetching results");
         }
       } catch (error) {
-        console.log(error);
-    };
+    }
   };
+
   return (
     <>
       <Card
@@ -56,10 +51,10 @@ const CardUserComponent = (props) => {
         }}
       >
         <Card.Header className={"text-start"}>
-          user N.
-          {props.user.id + " " + props.user.nomeCompleto}
+          user N.{props.user.id + " " + props.user.nomeCompleto}
         </Card.Header>
         <Card.Body>
+
           <ListGroup className="list-group-flush d-flex flex-row justify-content-evenly flex-wrap">
             <ListGroup.Item className="borderBottomInfo w-25">
               <b>Email</b> <br />

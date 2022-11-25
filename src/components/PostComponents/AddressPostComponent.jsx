@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React , { useEffect , useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import MyDatalistInput from "../GetComponents/MyDatalistInput";
 import { useNavigate } from "react-router-dom";
 
 function AddressPostComponent(props) {
-  const navigate = useNavigate();
   const [ comuni , setComuni ] = useState ( [] );
   const token = useSelector((state) => state.user.user.token);
+  const navigate = useNavigate()
+
+  useEffect ( () => {
+    if ( token === undefined) {
+      navigate("/")
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[token] );
 
   const maker = () => {
     let arr = []
@@ -78,11 +85,9 @@ function AddressPostComponent(props) {
         body: JSON.stringify(formObj),
       });
       if (response.ok) {
-        const data = await response.json();
         props.setAddressFlag(false)
-        console.log(data);
       } else {
-        alert("Error fetching results");
+        console.log("Error fetching results");
       }
     } catch (error) {
       console.log(error);
@@ -98,22 +103,22 @@ function AddressPostComponent(props) {
       }
     }>
         <Form.Group className="mb-3">
-          <Form.Label>Road</Form.Label>
+          <Form.Label>Via</Form.Label>
           <Form.Control
             value={formObj.via}
             onChange={(e) => handleForm("via", e.target.value)}
             type="text"
-            placeholder="Enter Road"
+            placeholder="Inserisci via"
           />
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>Civic Number</Form.Label>
+          <Form.Label>Numero civico</Form.Label>
           <Form.Control
             value={formObj.civico}
             onChange={(e) => handleForm("civico", e.target.value)}
             type="number"
-            placeholder="Enter Civic Number"
+            placeholder="Inserisci numero civico"
           />
         </Form.Group>
 
@@ -123,7 +128,7 @@ function AddressPostComponent(props) {
             value={formObj.cap}
             onChange={(e) => handleForm("cap", e.target.value)}
             type="number"
-            placeholder="Enter Cap"
+            placeholder="Inserisci il Cap"
           />
         </Form.Group>
 

@@ -1,4 +1,4 @@
-import React , { useState } from "react";
+import React , { useEffect , useState } from "react";
 import { Button , Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import AddressPostComponent from "./AddressPostComponent";
@@ -13,6 +13,13 @@ function ClientPostComponent() {
     const [ indirizzi , setIndirizzi ] = useState ( [] );
     const [ addressFlag , setAddressFlag ] = useState ( false );
     const navigate = useNavigate();
+
+    useEffect ( () => {
+        if ( token === undefined) {
+            navigate("/login")
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[token] );
 
     const maker = () => {
         let arr = []
@@ -83,10 +90,8 @@ function ClientPostComponent() {
             if ( response.ok ) {
                 const data = await response.json ();
                 setIndirizzi ( data );
-                console.log( "qui indirizzi data")
-                console.log ( data );
             } else {
-                alert ( "Error fetching results" );
+                console.log ( "Error fetching results" );
             }
         } catch ( error ) {
             console.log ( error );
@@ -129,6 +134,8 @@ function ClientPostComponent() {
     const dispatchUserList = () => {
         dispatch(getUserList(token))
     }
+
+
     return (
         <div style={
             {
@@ -284,7 +291,7 @@ function ClientPostComponent() {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Annual Revenue</Form.Label>
                     <Form.Control
-                        value={ formObj.password }
+                        value={ formObj.fatturatoAnnuo }
                         onChange={ (e) => handleForm ( "fatturatoAnnuo" , e.target.value ) }
                         type="number"
                         placeholder="Annual Revenue"

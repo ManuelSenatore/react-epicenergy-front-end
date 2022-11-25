@@ -51,7 +51,7 @@ export const logIn = (obj) => {
 
         console.log(data);
       } else {
-        alert("Error fetching results");
+        console.log("username o password errata");
       }
     } catch (error) {
       console.log(error);
@@ -79,7 +79,7 @@ export const getClientList = (key) => {
 
         console.log(data);
       } else {
-        alert("Error fetching results");
+        console.log("Error fetching results");
       }
     } catch (error) {
       console.log(error);
@@ -127,7 +127,7 @@ export const getUserList = (key) => {
           dispatch(setUserList(data));
           console.log ( data );
       } else {
-          alert ( "Error fetching results" );
+          console.log ( "Error fetching results" );
       }
   } catch ( error ) {
       console.log ( error );

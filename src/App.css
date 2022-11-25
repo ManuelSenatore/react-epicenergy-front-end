@@ -7,6 +7,31 @@
     overflow: auto;
 }
 
+/*impostazioni pulsante hide della settings bar*/
+.openSettings {
+    transform: rotate(180deg) scale(3);
+    cursor: pointer;
+}
+
+.openSettings:hover {
+    transform: rotate(180deg) scale(5);
+}
+
+.openSettings:active {
+    transform:scale(2);
+}
+
+.hideSettings {
+    cursor: pointer;
+    transform: scale(3);
+}
+.hideSettings:hover {
+    transform: scale(5);
+}
+.hideSettings:active {
+    transform: rotate(180deg) scale(2);
+}
+
 /*DATALIST*/
 /*FINESTRA CHE SI APRE DEL DATALIST*/
 .react-datalist-input__listbox {
