@@ -101,33 +101,39 @@ function NavbarComponent() {
                   width: "40px",
                 }}
               ></div>
+              {
+                  user.roles?.filter ( el => el === "ROLE_ADMIN" ).length !== 0 && (
+                      <>
+                        <FiHome
+                            className="d-block mx-auto "
+                            style={{ fontSize: "3rem" }}
+                            color={location.pathname === "/" ? "royalblue" : "black"}
+                        />
+                        <Button
+                            className={
+                              location.pathname === "/"
+                                  ? "d-block w-100 boxShadowSelected"
+                                  : "d-block w-100"
+                            }
+                            variant="light"
+                            onClick={() => navigate("/")}
+                        >
+                          HOME
+                        </Button>
+                        {location.pathname === "/" ? (
+                            <div className="segnalino ms-auto"></div>
+                        ) : (
+                            <div
+                                style={{
+                                  height: "40px",
+                                  width: "40px",
+                                }}
+                            ></div>
+                        )}
+                      </>
+                  )
+              }
 
-              <FiHome
-                className="d-block mx-auto "
-                style={{ fontSize: "3rem" }}
-                color={location.pathname === "/" ? "royalblue" : "black"}
-              />
-              <Button
-                className={
-                  location.pathname === "/"
-                    ? "d-block w-100 boxShadowSelected"
-                    : "d-block w-100"
-                }
-                variant="light"
-                onClick={() => navigate("/")}
-              >
-                HOME
-              </Button>
-              {location.pathname === "/" ? (
-                <div className="segnalino ms-auto"></div>
-              ) : (
-                <div
-                  style={{
-                    height: "40px",
-                    width: "40px",
-                  }}
-                ></div>
-              )}
               <FiUsers
                 className="d-block mx-auto"
                 style={{ fontSize: "3rem" }}
@@ -154,32 +160,39 @@ function NavbarComponent() {
                   }}
                 ></div>
               )}
-               <FiUser
-                className="d-block mx-auto"
-                style={{ fontSize: "3rem" }}
-                color={location.pathname === "/utenti" ? "royalblue" : "black"}
-              />
-              <Button
-                className={
-                  location.pathname === "/utenti"
-                    ? "d-block w-100 boxShadowSelected"
-                    : "d-block w-100"
-                }
-                variant="light"
-                onClick={() => {navigate("/utenti"); dispatch(getClientList(token))}}
-              >
-                UTENTI
-              </Button>
-              {location.pathname === "/utenti" ? (
-                <div className="segnalino ms-auto"></div>
-              ) : (
-                <div
-                  style={{
-                    height: "40px",
-                    width: "40px",
-                  }}
-                ></div>
-              )}
+              {
+                  user.roles?.filter ( el => el === "ROLE_ADMIN" ).length !== 0 && (
+                      <>
+                        <FiUser
+                            className="d-block mx-auto"
+                            style={{ fontSize: "3rem" }}
+                            color={location.pathname === "/utenti" ? "royalblue" : "black"}
+                        />
+                        <Button
+                            className={
+                              location.pathname === "/utenti"
+                                  ? "d-block w-100 boxShadowSelected"
+                                  : "d-block w-100"
+                            }
+                            variant="light"
+                            onClick={() => {navigate("/utenti"); dispatch(getClientList(token))}}
+                        >
+                          UTENTI
+                        </Button>
+                        {location.pathname === "/utenti" ? (
+                            <div className="segnalino ms-auto"></div>
+                        ) : (
+                            <div
+                                style={{
+                                  height: "40px",
+                                  width: "40px",
+                                }}
+                            ></div>
+                        )}
+                      </>
+                  )
+              }
+
 
               <RiBillLine
                   className="d-block mx-auto"

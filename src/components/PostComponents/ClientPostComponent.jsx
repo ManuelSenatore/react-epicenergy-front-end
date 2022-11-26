@@ -156,19 +156,19 @@ function ClientPostComponent() {
                         handleFormName={ "userId" }
                         triggerFetch={ dispatchUserList }
                         arrayComuniList={ maker2 ( userList ) }
-                        placeDataList={ "User ID" }
-                        labelDataList={ "Select your user" }
+                        placeDataList={ "Seleziona da quale dipendente sarà seguito" }
+                        labelDataList={ "Inserisci il dipendente di riferimento" }
                         choice={"id"}
                     />
                 </div>
 
                 <Form.Group className="mb-3">
-                    <Form.Label>VAT Number</Form.Label>
+                    <Form.Label>Partita IVA</Form.Label>
                     <Form.Control
                         value={ formObj.partitaIva }
                         onChange={ (e) => handleForm ( "partitaIva" , e.target.value ) }
                         type="number"
-                        placeholder="Enter VAT Number"
+                        placeholder="Inserisci il numero di partita IVA"
                     />
                 </Form.Group>
 
@@ -178,8 +178,8 @@ function ClientPostComponent() {
                         handleFormName={ "indirizzoLegaleId" }
                         triggerFetch={ getIndirizziList }
                         arrayComuniList={ maker ( indirizzi ) }
-                        placeDataList={ "Legal Address" }
-                        labelDataList={ "Select your legal address" }
+                        placeDataList={ "Indirizzo legale" }
+                        labelDataList={ "Seleziona l'indirizzo legale o creane uno nuovo" }
                         choice={"id"}
                     />
                 </div>
@@ -190,8 +190,8 @@ function ClientPostComponent() {
                         handleFormName={ "indirizzoOperativoId" }
                         triggerFetch={ getIndirizziList }
                         arrayComuniList={ maker ( indirizzi ) }
-                        placeDataList={ "Operative Address" }
-                        labelDataList={ "Select your operative address" }
+                        placeDataList={ "Indirizzo della sede operativa" }
+                        labelDataList={ "Seleziona l'indirizzo operativo o creane uno nuovo" }
                         choice={"id"}
                     />
                 </div>
@@ -232,52 +232,52 @@ function ClientPostComponent() {
                         value={ formObj.pec }
                         onChange={ (e) => handleForm ( "pec" , e.target.value ) }
                         type="email"
-                        placeholder="Pec"
+                        placeholder="Pec(Posta elettronica certificata)"
                     />
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                    <Form.Label>Contact Email</Form.Label>
+                    <Form.Label>Email di contatto</Form.Label>
                     <Form.Control
                         value={ formObj.emailContatto }
                         onChange={ (e) => handleForm ( "emailContatto" , e.target.value ) }
                         type="email"
-                        placeholder="Contact Email"
+                        placeholder="Email di contatto"
                     />
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                    <Form.Label>Name</Form.Label>
+                    <Form.Label>Nome del cliente</Form.Label>
                     <Form.Control
                         value={ formObj.nomeContatto }
                         onChange={ (e) => handleForm ( "nomeContatto" , e.target.value ) }
                         type="text"
-                        placeholder="Name"
+                        placeholder="Inserisci nome"
                     />
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                    <Form.Label>Surname</Form.Label>
+                    <Form.Label>Cognome del cliente</Form.Label>
                     <Form.Control
                         value={ formObj.cognomeContatto }
                         onChange={ (e) => handleForm ( "cognomeContatto" , e.target.value ) }
                         type="text"
-                        placeholder="Surname"
+                        placeholder="Inserisci cognome"
                     />
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                    <Form.Label>Telephone</Form.Label>
+                    <Form.Label>Telefono cliente</Form.Label>
                     <Form.Control
                         value={ formObj.telefonoContatto }
                         onChange={ (e) => handleForm ( "telefonoContatto" , e.target.value ) }
                         type="number"
-                        placeholder="Telephone"
+                        placeholder="Inserisci il numero di telefono"
                     />
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                    <Form.Label>Business Name</Form.Label>
+                    <Form.Label>Ragione Sociale</Form.Label>
                     <Form.Select
                         onChange={ (e) => handleForm ( "ragioneSociale" , e.target.value ) }
                     >
@@ -289,12 +289,12 @@ function ClientPostComponent() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Annual Revenue</Form.Label>
+                    <Form.Label>Fatturato</Form.Label>
                     <Form.Control
                         value={ formObj.fatturatoAnnuo }
                         onChange={ (e) => handleForm ( "fatturatoAnnuo" , e.target.value ) }
                         type="number"
-                        placeholder="Annual Revenue"
+                        placeholder="Inserisci fatturato annuale"
                     />
                 </Form.Group>
 
@@ -302,7 +302,7 @@ function ClientPostComponent() {
                     className={"w-25 d-block mx-auto"}
                     variant="primary"
                     type="submit">
-                    Submit
+                    Registra nuovo cliente
                 </Button>
             </Form>
         </div>

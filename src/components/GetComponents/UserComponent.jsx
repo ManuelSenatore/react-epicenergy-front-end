@@ -70,7 +70,7 @@ const UserComponent = () => {
       <Row className="d-flex flex-column">
         <Col className=" w-100 d-flex">
           <Form
-            className="w-50"
+            className="w-100"
             onSubmit={(e) => {
               e.preventDefault();
               getUserListByUsername(token, formObj.stringa, formObj.value);
@@ -91,14 +91,6 @@ const UserComponent = () => {
                   placeholder="Username"
                   className="me-2 "
                   onChange={(e) => handleForm("value", e.target.value)}
-                  /*              onKeyUp={(e) => {
-                    e.preventDefault();
-                    getUserListByUsername(
-                      token,
-                      formObj.stringa,
-                      formObj.value
-                    );
-                  }} */
                   aria-label="Cerca"
                 ></Form.Control>
                 <Button type="submit">Cerca</Button>

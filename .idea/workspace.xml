@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a23b2ff-3535-4ece-8740-5769e3fe9d1a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/utility/RoleChecker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GetComponents/CardClienteComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetComponents/CardClienteComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GetComponents/CardFatturaComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetComponents/CardFatturaComponent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GetComponents/CardUserComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetComponents/CardUserComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GetComponents/ClientiComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetComponents/ClientiComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GetComponents/FattureComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetComponents/FattureComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GetComponents/UserComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetComponents/UserComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomeComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavbarComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavbarComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PostComponents/ClientPostComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostComponents/ClientPostComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PostComponents/PostUserComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostComponents/PostUserComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PutComponents/PutClienteComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PutComponents/PutClienteComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SettingsComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SettingsComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/actions/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +90,8 @@
       <workItem from="1669107013288" duration="26440000" />
       <workItem from="1669152053127" duration="18313000" />
       <workItem from="1669231754046" duration="22334000" />
-      <workItem from="1669364678770" duration="30565000" />
+      <workItem from="1669364678770" duration="32479000" />
+      <workItem from="1669462987414" duration="17264000" />
     </task>
     <servers />
   </component>

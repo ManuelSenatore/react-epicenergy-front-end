@@ -14,6 +14,7 @@ const persistConfig = {
       secretKey: "react",
     }),
   ],
+  blacklist: ['userReducer']
 };
 
 const mergedReducers = combineReducers({

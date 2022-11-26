@@ -208,12 +208,12 @@ const PutClienteComponent = () => {
                     </div>
 
                     <Form.Group className="mb-3">
-                        <Form.Label>VAT Number</Form.Label>
+                        <Form.Label>Partita Iva</Form.Label>
                         <Form.Control
                             value={ formObj.partitaIva }
                             onChange={ (e) => handleForm ( "partitaIva" , e.target.value ) }
                             type="number"
-                            placeholder="Partita IVA"
+                            placeholder="Inserisci la partita IVA"
                         />
                     </Form.Group>
 

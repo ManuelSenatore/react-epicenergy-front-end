@@ -44,7 +44,7 @@ function App() {
                                             setSettingsFlag ( !settingsFlag )
                                         } }
                                         style={ {
-                                            color : "red" ,
+                                            color : "royalblue" ,
                                             zIndex : 10 ,
                                             position : "fixed" ,
                                             right : "5px" ,

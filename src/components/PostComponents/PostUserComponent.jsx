@@ -73,12 +73,12 @@ const PostUserComponent = () => {
                 }}
             >
                 <Form.Group className="mb-3" controlId="formBasicNomeCompleto">
-                    <Form.Label>Name & Surname</Form.Label>
+                    <Form.Label>Nome e Cognome</Form.Label>
                     <Form.Control
                         value={formObj.nomeCompleto}
                         onChange={(e) => handleForm("nomeCompleto", e.target.value)}
                         type="text"
-                        placeholder="Enter name"
+                        placeholder="Inserisci il nome e cognome"
                     />
                 </Form.Group>
 
@@ -88,17 +88,17 @@ const PostUserComponent = () => {
                         value={formObj.username}
                         onChange={(e) => handleForm("username", e.target.value)}
                         type="text"
-                        placeholder="Enter username"
+                        placeholder="Scegli il tuo username"
                     />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label>Email</Form.Label>
                     <Form.Control
                         value={formObj.email}
                         onChange={(e) => handleForm("email", e.target.value)}
                         type="email"
-                        placeholder="Enter email"
+                        placeholder="Inserisci la tua email"
                     />
                 </Form.Group>
 
@@ -108,7 +108,7 @@ const PostUserComponent = () => {
                         value={formObj.password}
                         onChange={(e) => handleForm("password", e.target.value)}
                         type="password"
-                        placeholder="Password"
+                        placeholder="Assicurati di non essere visto"
                     />
                 </Form.Group>
                 <Button className={"w-25 d-block mx-auto my-2"} variant="primary" type="submit">

@@ -58,7 +58,7 @@ const ClientiComponent = () => {
     <Container fluid>
       <Row className="d-flex flex-column justify-content-between">
         <Col className=" w-100 d-flex">
-          <Form className="w-50"  onSubmit={ (e) => {
+          <Form className="w-100"  onSubmit={ (e) => {
                     e.preventDefault ();
                     dispatch(getClientListByParams(token, formObj.stringa, formObj.value, formObj.value2));
                 } }>

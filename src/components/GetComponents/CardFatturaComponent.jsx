@@ -11,9 +11,6 @@ const CardFatturaComponent = (props) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const [ infoFlag , setInfoFlag ] = useState ( false );
-    const [ deleteFlag , setDeleteFlag ] = useState (true);
-
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -57,7 +54,12 @@ const CardFatturaComponent = (props) => {
                                 borderRadius : 0 ,
                             } }>
                             <div className={ "d-flex" }>
-                                <Card.Header className={ "text-start w-50" }>FATTURA
+                                <Card.Header
+                                    style={{
+                                        fontWeight: 'bolder',
+                                        color: 'royalblue'
+                                    }}
+                                    className={ "text-start w-50" }>FATTURA
                                     N.{ props.fattura.numero } DEL CLIENTE { props.fattura.cliente.nomeContatto + " " +
                                         props.fattura.cliente.cognomeContatto }
                                 </Card.Header>

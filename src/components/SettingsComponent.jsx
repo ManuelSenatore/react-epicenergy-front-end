@@ -20,6 +20,35 @@ function SettingsComponent() {
                         location.pathname === "/signup" || (
                             <Col className="d-flex flex-column justify-content-end">
                                 {
+                                    location.pathname === "/postAddress" && (
+                                        <>
+                                            <MdOutlineAddLocationAlt className="d-block mx-auto " style={ {fontSize : "3rem"} }
+                                                                     color={ location.pathname === "/postAddress" ? "royalblue" : "black" }/>
+                                            <Button
+                                                variant={ "light" }
+                                                className={ location.pathname === "/postAddress" ? "d-block w-100 boxShadowSelected" : "d-block w-100" }
+                                                onClick={ () => navigate ( "/postAddress" ) }
+                                            >
+                                                Aggiungi indirizzo
+                                            </Button>
+                                            {
+                                                location.pathname === "/postAddress" ? (
+                                                    <div className="segnalino2 me-auto"></div>
+                                                ) : (
+                                                    <div style={
+                                                        {
+                                                            height : "40px" ,
+                                                            width : "40px"
+                                                        }
+                                                    }>
+
+                                                    </div>
+                                                )
+                                            }
+                                        </>
+                                    )
+                                }
+                                {
                                     location.pathname === "/putUtente" && (
                                         <>
                                         <RiUserSettingsLine className="d-block mx-auto " style={ {fontSize : "3rem"} }
