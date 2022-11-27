@@ -11,7 +11,7 @@ function HomeComponent() {
     const navigate = useNavigate ()
 
     const checkRoleReturnBoolean = (roleToCheck) => {
-       return user.roles.filter ( el => el === roleToCheck ).length !== 0
+       return user.roles?.filter ( el => el === roleToCheck ).length !== 0
     }
 
     useEffect ( () => {

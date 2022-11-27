@@ -71,7 +71,7 @@ function SignUpComponent() {
             value={formObj.nomeCompleto}
             onChange={(e) => handleForm("nomeCompleto", e.target.value)}
             type="text"
-            placeholder="Enter name"
+            placeholder="Inserisci nome"
           />
         </Form.Group>
 

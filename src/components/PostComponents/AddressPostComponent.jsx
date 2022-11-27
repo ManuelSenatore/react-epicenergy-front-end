@@ -140,7 +140,7 @@ function AddressPostComponent(props) {
                   triggerFetch={getComuniList}
                   arrayComuniList={maker(comuni)}
                   placeDataList={"Municipality"}
-                  labelDataList={"Select your municipality"}
+                  labelDataList={"Inserisci il comune"}
                   choice={""}
               />
 
