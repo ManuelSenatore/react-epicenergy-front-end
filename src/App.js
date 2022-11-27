@@ -19,14 +19,12 @@ import FattureComponent from "./components/GetComponents/FattureComponent";
 import FatturaPostComponent from "./components/PostComponents/FatturaPostComponent";
 import FatturaPutComponent from "./components/PutComponents/FatturaPutComponent";
 import PutUserComponent from "./components/PutComponents/PutUserComponent";
+import { RiListSettingsLine } from "react-icons/ri";
 
 function App() {
 
     const [ settingsFlag , setSettingsFlag ] = useState ( false );
 
-    const handleSettingsFlag = () => {
-        setSettingsFlag ( !settingsFlag );
-    }
 
     return (
         <BrowserRouter>
@@ -35,25 +33,9 @@ function App() {
                     <Col className="p-0" xs={ 2 }>
                         <NavbarComponent/>
                     </Col>
-                    <Col xs={ settingsFlag ? 8 : 10 } className={ "p-3" }>
+                    <Col xs={ settingsFlag ? 8 : 10 } className={ "px-5 py-1" }>
                         {
                             settingsFlag ? (
-                                <Col xs={ 12 }>
-                                    <SlArrowLeft
-                                        onClick={ () => {
-                                            setSettingsFlag ( !settingsFlag )
-                                        } }
-                                        style={ {
-                                            color : "red" ,
-                                            zIndex : 10 ,
-                                            position : "fixed" ,
-                                            right : "5px" ,
-                                            top : "50px" ,
-                                            fontWeight : "bolder" ,
-                                        } }
-                                        className="openSettings"/>
-                                </Col>
-                            ) : (
                                 <Col xs={ 12 }>
                                     <SlArrowLeft
                                         onClick={ () => {
@@ -64,8 +46,27 @@ function App() {
                                             zIndex : 10 ,
                                             position : "fixed" ,
                                             right : "5px" ,
-                                            top : "50px" ,
+                                            top : "15px" ,
                                             fontWeight : "bolder" ,
+                                        } }
+                                        className="openSettings"/>
+                                </Col>
+                            ) : (
+                                <Col
+                                    xs={ 12 }>
+                                    <RiListSettingsLine
+                                        onClick={ () => {
+                                            setSettingsFlag ( !settingsFlag )
+                                        } }
+                                        style={ {
+                                            color : "aliceblue" ,
+                                            zIndex : 10 ,
+                                            position : "fixed" ,
+                                            right : "15px" ,
+                                            top : "20px" ,
+                                            fontWeight : "bolder" ,
+                                            backgroundColor:"royalblue",
+                                            borderBottomLeftRadius: "10px"
                                         } }
                                         className="hideSettings"
                                     />

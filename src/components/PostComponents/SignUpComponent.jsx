@@ -55,6 +55,8 @@ function SignUpComponent() {
         color: "royalblue",
         borderRadius: "5px",
         padding: "20px",
+        backgroundColor: "aliceblue",
+        fontSize: "1.5em"
       }
     }>
       <Form
@@ -64,7 +66,7 @@ function SignUpComponent() {
         }}
       >
         <Form.Group className="mb-3" controlId="formBasicNomeCompleto">
-          <Form.Label>Name & Surname</Form.Label>
+          <Form.Label>Nome e cognome</Form.Label>
           <Form.Control
             value={formObj.nomeCompleto}
             onChange={(e) => handleForm("nomeCompleto", e.target.value)}
@@ -77,19 +79,20 @@ function SignUpComponent() {
           <Form.Label>Username</Form.Label>
           <Form.Control
             value={formObj.username}
+            autoComplete="current-password"
             onChange={(e) => handleForm("username", e.target.value)}
             type="text"
-            placeholder="Enter username"
+            placeholder="Inserisci username"
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>Indirizzo email</Form.Label>
           <Form.Control
             value={formObj.email}
             onChange={(e) => handleForm("email", e.target.value)}
             type="email"
-            placeholder="Enter email"
+            placeholder="Inserisci la tua email"
           />
         </Form.Group>
 
@@ -99,7 +102,8 @@ function SignUpComponent() {
             value={formObj.password}
             onChange={(e) => handleForm("password", e.target.value)}
             type="password"
-            placeholder="Password"
+            placeholder="Inserisci Password"
+            autoComplete="current-password"
           />
         </Form.Group>
         <Button className={"w-25 d-block mx-auto my-2"} variant="primary" type="submit">

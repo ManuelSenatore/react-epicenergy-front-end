@@ -58,11 +58,11 @@ const ClientiComponent = () => {
     <Container fluid>
       <Row className="d-flex flex-column justify-content-between">
         <Col className=" w-100 d-flex">
-          <Form className="w-50"  onSubmit={ (e) => {
+          <Form className="w-100"  onSubmit={ (e) => {
                     e.preventDefault ();
                     dispatch(getClientListByParams(token, formObj.stringa, formObj.value, formObj.value2));
                 } }>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-5 ">
               <Form.Select
                 onChange={(e) => handleForm("stringa", e.target.value)}
               >
@@ -74,8 +74,9 @@ const ClientiComponent = () => {
                 <option value={"filter-nome-cognome"}>Cerca per: Nome e Cognome</option>
               </Form.Select>
             </Form.Group>
+
             {formObj.stringa === "fatturato" && (
-              <Form.Group className="d-flex">
+              <Form.Group className="d-flex mb-2">
                 <Form.Control
                   type="number"
                   placeholder="Fatturato"
@@ -84,9 +85,10 @@ const ClientiComponent = () => {
                   style={{}}
                   aria-label="Cerca"
                 ></Form.Control>
-                <Button type="submit">Search</Button>
+                <Button type="submit">Ricerca</Button>
               </Form.Group>
             )}
+
             {formObj.stringa === "filter-nome-cognome" && (
                     <InputGroup className="mb-3">
                     <InputGroup.Text>Nome e Cognome</InputGroup.Text>
@@ -95,8 +97,9 @@ const ClientiComponent = () => {
                     <Button type="submit">Cerca</Button>
                   </InputGroup>
             )}
+
             {formObj.stringa === "filter-data-inserimento" && (
-                 <Form.Group className="d-flex">
+                 <Form.Group className="d-flex mb-2">
                  <Form.Control
                    type="date"
                    placeholder="Fatturato"
@@ -105,7 +108,7 @@ const ClientiComponent = () => {
                    style={{}}
                    aria-label="Cerca"
                  ></Form.Control>
-                 <Button type="submit">Search</Button>
+                 <Button type="submit">Ricerca</Button>
                </Form.Group>
             )}
           </Form>

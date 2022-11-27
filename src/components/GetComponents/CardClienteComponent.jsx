@@ -1,21 +1,91 @@
 import React , { useState } from 'react';
-import {  Card , ListGroup } from "react-bootstrap";
+import { Card , ListGroup } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { useDispatch , useSelector } from "react-redux";
+import { getClientList , getFattureList } from "../../redux/actions/actions";
+import { RiDeleteBin5Line } from "react-icons/ri";
+import ModalDeleteComponent from "../DeleteComponents/ModalDeleteComponent";
 
 const CardClienteComponent = (props) => {
-
     const [ infoFlag , setInfoFlag ] = useState ( false );
+
+    const token = useSelector ( (state) => state.user.user.token );
+    const navigate = useNavigate ();
+    const dispatch = useDispatch ();
+
+    const [ show , setShow ] = useState ( false );
+
+    const handleClose = () => setShow ( false );
+    const handleShow = () => setShow ( true );
+
+    const deleteCliente = async () => {
+        const baseEndpoint = `http://localhost:8080/api/clienti/delete/${ props.cliente.clienteId }`;
+
+        const header = {
+            Authorization : `Bearer ${ token }` ,
+        };
+        try {
+            const response = await fetch ( baseEndpoint , {
+                method : "DELETE" ,
+                headers : header ,
+            } );
+            if ( response.ok ) {
+                dispatch ( getClientList ( token ) )
+                navigate ( "/clienti" )
+            } else {
+                console.log ( "Error fetching results" );
+            }
+        } catch ( error ) {
+            console.log ( error );
+        }
+    }
 
     return (
         <>
             <Card
-                className={ props.index === 0 || props.index === props.arrLen - 1 ? "text-center cardBorderStyle w-100" : "text-center w-100" }
+                className={ props.index === 0 || props.index === props.arrLen - 1 ?
+                    "text-center  w-100" : "text-center w-100" }
                 border="primary"
                 style={ {
-                    borderRadius : 0
+                    borderRadius : 0,
+                    backgroundColor : "aliceblue",
                 } }>
 
-                <Card.Header className={ "text-start" }>CLIENTE
-                    N.{ props.cliente.clienteId + " " + props.cliente.nomeContatto + " " + props.cliente.cognomeContatto }</Card.Header>
+                <div className={ "d-flex" }>
+                    <Card.Header
+                        style={ {
+                            fontWeight : 'bolder' ,
+                            color : 'royalblue'
+                        } }
+                        className={ "text-start w-50" }>
+                        CLIENTE N.{ props.cliente.clienteId + " " + props.cliente.nomeContatto + " " +
+                            props.cliente.cognomeContatto }
+                    </Card.Header>
+                    <div className="d-flex justify-content-end align-items-center text-danger"
+                         style={ {
+                             backgroundColor : "#f8f9fa" ,
+                             width : "50%" ,
+                             border : "1px solid #ced4da" ,
+                             borderLeft : "none" ,
+                             borderRight : "none" ,
+                         } }>
+                        <RiDeleteBin5Line
+                            onClick={ handleShow }
+                            style={ {
+                                fontSize : "1.5em" ,
+                                marginRight : "5px" ,
+                                cursor : "pointer"
+                            } }
+                        />
+                    </div>
+                </div>
+
+                <ModalDeleteComponent
+                    show={show}
+                    handleClose={handleClose}
+                    handleShow={handleShow}
+                    deleteFattura={deleteCliente}
+                />
 
                 <Card.Body>
 
@@ -45,7 +115,7 @@ const CardClienteComponent = (props) => {
 
                     <div
                         onClick={ () => setInfoFlag ( !infoFlag ) }
-                        className={ infoFlag ? "openInfoTrue" : "openInfo" }>
+                        className={ infoFlag ? "openInfoTrue my-4" : "openInfo my-2" }>
 
                     </div>
                     {

@@ -100,6 +100,8 @@ function AddressPostComponent(props) {
         color: "royalblue",
         borderRadius: "5px",
         padding: "20px",
+        backgroundColor: "aliceblue",
+        fontSize: "1.5em"
       }
     }>
         <Form.Group className="mb-3">
@@ -142,7 +144,7 @@ function AddressPostComponent(props) {
                   choice={""}
               />
 
-        <Button  className={"w-25 d-block mx-auto my-2"} onClick={() => {
+        <Button  className={"w-25 d-block mx-auto my-3"} onClick={() => {
           createNewIndirizzo()
         }} variant="primary" type="button">
           Aggiungi indirizzo
