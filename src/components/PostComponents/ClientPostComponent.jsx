@@ -142,9 +142,14 @@ function ClientPostComponent() {
                 color: "royalblue",
                 borderRadius: "5px",
                 padding: "20px",
+                backgroundColor: "aliceblue"
             }
         }>
+            <h2 style={{textAlign: "center"}}>Aggiungi nuovo utente</h2>
             <Form
+                style={{
+                    fontSize: "1.5em",
+                }}
                 onSubmit={ (e) => {
                     e.preventDefault ();
                     postUpClient(formObj);

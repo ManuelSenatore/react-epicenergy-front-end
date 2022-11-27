@@ -81,7 +81,7 @@ export const getClientList = (key) => {
             if ( response.ok ) {
                 const data = await response.json ();
 
-                if (getState().user.user.roles.filter ( el => el === "ROLE_ADMIN" ).length !== 0) {
+                if (getState().user.user.roles?.filter ( el => el === "ROLE_ADMIN" ).length !== 0) {
                     dispatch ( setClientList ( data ) );
                 } else {
                     dispatch ( setClientList ( data.filter(el => el.user.id === getState().user.user.id) ) );
@@ -122,21 +122,21 @@ export const getClientListByParams = (key, stringa, value, value2) => {
       if (response.ok) {
         const data = await response.json();
         if (stringa === "filter-data-inserimento") {
-            if (getState().user.user.roles.filter ( el => el === "ROLE_ADMIN" ).length !== 0) {
+            if (getState().user.user.roles?.filter ( el => el === "ROLE_ADMIN" ).length !== 0) {
                 dispatch ( setClientList ( data.content ) );
             } else {
                 dispatch ( setClientList ( data.content.filter(el => el.user.id === getState().user.user.id) ) );
             }
         }
         if (stringa === "fatturato") {
-            if (getState().user.user.roles.filter ( el => el === "ROLE_ADMIN" ).length !== 0) {
+            if (getState().user.user.roles?.filter ( el => el === "ROLE_ADMIN" ).length !== 0) {
                 dispatch ( setClientList ( data.content ) );
             } else {
                 dispatch ( setClientList ( data.content.filter(el => el.user.id === getState().user.user.id) ) );
             }
         }
         if (stringa === "filter-nome-cognome") {
-            if (getState().user.user.roles.filter ( el => el === "ROLE_ADMIN" ).length !== 0) {
+            if (getState().user.user.roles?.filter ( el => el === "ROLE_ADMIN" ).length !== 0) {
                 dispatch ( setClientList ( data.content ) );
             } else {
                 dispatch ( setClientList ( data.content.filter(el => el.user.id === getState().user.user.id) ) );
@@ -192,7 +192,7 @@ export const getUserList = (key) => {
             } );
             if ( response.ok ) {
                 const data = await response.json ();
-                if (getState().user.user.roles.filter ( el => el === "ROLE_ADMIN" ).length !== 0) {
+                if (getState().user.user.roles?.filter ( el => el === "ROLE_ADMIN" ).length !== 0) {
                     dispatch ( setUserList ( data ) );
                 } else {
                     dispatch ( setUserList ( data.filter(el => el.id === getState().user.user.id) ) );
@@ -220,7 +220,7 @@ export const getFattureList = (key) => {
             } );
             if ( response.ok ) {
                 const data = await response.json ();
-                if (getState().user.user.roles.filter ( el => el === "ROLE_ADMIN" ).length !== 0) {
+                if (getState().user.user.roles?.filter ( el => el === "ROLE_ADMIN" ).length !== 0) {
                     dispatch ( setFattureList ( data ) );
                 } else {
                     dispatch ( setFattureList ( data.filter(el => el.cliente.user.id === getState().user.user.id) ) );

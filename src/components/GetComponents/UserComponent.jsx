@@ -68,7 +68,7 @@ const UserComponent = () => {
   return (
     <Container fluid>
       <Row className="d-flex flex-column">
-        <Col className=" w-100 d-flex">
+        <Col className=" w-100 d-flex mb-3">
           <Form
             className="w-100"
             onSubmit={(e) => {

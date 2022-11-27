@@ -49,6 +49,8 @@ function LoginComponent() {
                 color: "royalblue",
                 borderRadius: "5px",
                 padding: "20px",
+                backgroundColor: "aliceblue",
+                fontSize: "1.5em"
             }
         }>
             <Form onSubmit={(e) => {
@@ -63,6 +65,7 @@ function LoginComponent() {
                         value={formObj.username}
                         onChange={(e) => handleForm("username", e.target.value)}
                         type="text"
+                        autoComplete="current-password"
                         placeholder="Inserisci il nome utente scelto in fase di registrazione" />
                     <Form.Text className="text-muted">
                         Non condividere mai la password con nessuno.
@@ -75,6 +78,7 @@ function LoginComponent() {
                         value={formObj.password}
                         onChange={(e) => handleForm("password",e.target.value)}
                         type="password"
+                        autoComplete="current-password"
                         placeholder="Inserisci la tua password" />
                 </Form.Group>
                 <Button className={"w-25 d-block mx-auto my-2"} variant="primary" type="submit">

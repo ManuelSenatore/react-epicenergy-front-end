@@ -48,10 +48,11 @@ const CardFatturaComponent = (props) => {
                     <>
                         <Card
                             className={ props.index === 0 || props.index === props.arrLen - 1 ?
-                                "text-center cardBorderStyle w-100" : "text-center w-100" }
+                                "text-center  w-100" : "text-center w-100" }
                             border="primary"
                             style={ {
                                 borderRadius : 0 ,
+                                backgroundColor: "aliceblue"
                             } }>
                             <div className={ "d-flex" }>
                                 <Card.Header

@@ -26,12 +26,15 @@ function HomeComponent() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     } , [ user.token ] );
 
-    console.log(user.roles)
-    console.log(checkRoleReturnBoolean("ROLE_ADMIN"))
 
 
     return (
-        <Container fluid className={ "text-center" }>
+        <Container fluid
+                   style={{
+                       backgroundImage: "linear-gradient(to bottom, aliceblue, white)",
+                       padding: "2em",
+                   }}
+                   className={ "text-center" }>
             <Row>
                 <h1
                     style={ {
@@ -44,7 +47,7 @@ function HomeComponent() {
                 <h3 style={ {color : "royalblue" , marginTop : "100px"} }>
                     CLIENTI
                 </h3>
-                <h5 style={ {color : "royalblue" , marginTop:"50" }}>(Solo gli admin possono vedere tutti i clienti. Nel caso di accesso da parte di un utente normale, esso potrà visualizzare solo i clienti a lui assegnatigli)</h5>
+                <h5 style={ {color : "slategray" , marginTop:"50" }}>(Solo gli admin possono vedere tutti i clienti. Nel caso di accesso da parte di un utente normale, esso potrà visualizzare solo i clienti a lui assegnatigli)</h5>
                 <h4 style={ {color : "royalblue" , marginTop:"50" }}>
                     I clienti in epic energy sono molto importanti, essi sono le utenze che porteranno guadagni all'azienda. Essi dovranno essere assegnati ad un utente(che sarà un dipendente dell'azienda epic energy che dovrà occuparsi di gestire le fatture del cliente assegnatogli. Un utente potrà seguire più clienti in contemporanea, un cliente non potrà avere più di un utente di riferimento), di seguito la lista delle funzionalità della sezione cliente:
                 </h4>

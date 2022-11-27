@@ -82,19 +82,27 @@ function NavbarComponent() {
             </>
           ) : (
             <>
-              <div className="d-flex justify-content-beetween">
+              <div
+                  style={{
+                    backgroundColor: "aliceblue",
+                    borderRadius: "50px"
+                  }}
+                  className="d-flex justify-content-beetween mt-2">
                 <AiOutlineLogout
                   className="d-block me-auto"
                   color="red"
                   style={{ fontSize: "3rem", cursor: "pointer" }}
                   onClick={() => dispatch(logout())}
-                >
-                  Logout
-                </AiOutlineLogout>
+                />
 
                 <FaRegUserCircle style={{ fontSize: "3rem" }} />
               </div>
-                <p className=" text-end">{user.username}</p>
+                <p
+                    style={{
+                      color: "royalblue",
+                      fontWeight: "bold"
+                    }}
+                    className="text-end">{user.username}</p>
               <div
                 style={{
                   height: "40px",

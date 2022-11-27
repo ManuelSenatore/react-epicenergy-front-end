@@ -48,8 +48,8 @@ const CardUserComponent = (props) => {
         }
     };
 
-    const deleteUser = async() => {
-        const baseEndpoint = `http://localhost:8080/api/users/delete/${props.user.id}`;
+    const deleteUser = async () => {
+        const baseEndpoint = `http://localhost:8080/api/users/delete/${ props.user.id }`;
 
         const header = {
             Authorization : `Bearer ${ token }` ,
@@ -60,8 +60,8 @@ const CardUserComponent = (props) => {
                 headers : header ,
             } );
             if ( response.ok ) {
-                dispatch(getUserList(token))
-                navigate("/utenti")
+                dispatch ( getUserList ( token ) )
+                navigate ( "/utenti" )
             } else {
                 console.log ( "Error fetching results" );
             }
@@ -75,18 +75,21 @@ const CardUserComponent = (props) => {
             <Card
                 className={
                     props.index === 0 || props.index === props.arrLen - 1
-                        ? "text-center w-100 cardBorderStyle"
+                        ? "text-center w-100 "
                         : "text-center w-100 "
                 }
                 border="primary"
                 style={ {
                     borderRadius : 0 ,
-                } }
-            >
+                    backgroundColor : "aliceblue" ,
+                } }>
                 <div className={ "d-flex" }>
-                    <Card.Header style=
-                                     { {fontWeight : "bolder" , color : "royalblue"} }
-                                 className={ "text-start w-50" }>
+                    <Card.Header
+                        style={ {
+                            fontWeight : "bolder" ,
+                            color : "royalblue"
+                        } }
+                        className={ "text-start w-50" }>
                         Utente N.{ props.user.id + " " + props.user.nomeCompleto }
                     </Card.Header>
                     <div className="d-flex justify-content-end align-items-center text-danger"
@@ -98,21 +101,21 @@ const CardUserComponent = (props) => {
                              borderRight : "none" ,
                          } }>
                         <RiDeleteBin5Line
-                            onClick={handleShow}
+                            onClick={ handleShow }
                             style={ {
                                 fontSize : "1.5em" ,
-                                marginRight: "5px",
-                                cursor: "pointer"
+                                marginRight : "5px" ,
+                                cursor : "pointer"
                             } }
                         />
                     </div>
                 </div>
 
                 <ModalDeleteComponent
-                    show={show}
-                    handleClose={handleClose}
-                    handleShow={handleShow}
-                    deleteFattura={deleteUser}
+                    show={ show }
+                    handleClose={ handleClose }
+                    handleShow={ handleShow }
+                    deleteFattura={ deleteUser }
                 />
 
                 <Card.Body>
@@ -137,7 +140,7 @@ const CardUserComponent = (props) => {
                             setInfoFlag ( !infoFlag );
                             getClientListFromUser ( props.user.id )
                         } }
-                        className={ infoFlag ? "openInfoTrue" : "openInfo" }
+                        className={ infoFlag ? "openInfoTrue my-4" : "openInfo my-2" }
                     ></div>
                     { infoFlag && (
                         <ListGroup className="list-group-flush d-flex flex-row justify-content-evenly flex-wrap">

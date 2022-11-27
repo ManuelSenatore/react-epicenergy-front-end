@@ -44,10 +44,11 @@ const CardClienteComponent = (props) => {
         <>
             <Card
                 className={ props.index === 0 || props.index === props.arrLen - 1 ?
-                    "text-center cardBorderStyle w-100" : "text-center w-100" }
+                    "text-center  w-100" : "text-center w-100" }
                 border="primary"
                 style={ {
-                    borderRadius : 0
+                    borderRadius : 0,
+                    backgroundColor : "aliceblue",
                 } }>
 
                 <div className={ "d-flex" }>
@@ -56,8 +57,8 @@ const CardClienteComponent = (props) => {
                             fontWeight : 'bolder' ,
                             color : 'royalblue'
                         } }
-                        className={ "text-start w-50" }>CLIENTE
-                        N.{ props.cliente.clienteId + " " + props.cliente.nomeContatto + " " +
+                        className={ "text-start w-50" }>
+                        CLIENTE N.{ props.cliente.clienteId + " " + props.cliente.nomeContatto + " " +
                             props.cliente.cognomeContatto }
                     </Card.Header>
                     <div className="d-flex justify-content-end align-items-center text-danger"
@@ -114,7 +115,7 @@ const CardClienteComponent = (props) => {
 
                     <div
                         onClick={ () => setInfoFlag ( !infoFlag ) }
-                        className={ infoFlag ? "openInfoTrue" : "openInfo" }>
+                        className={ infoFlag ? "openInfoTrue my-4" : "openInfo my-2" }>
 
                     </div>
                     {

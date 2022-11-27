@@ -80,6 +80,8 @@ const FatturaPostComponent = (props) => {
                 color : "royalblue" ,
                 borderRadius : "5px" ,
                 padding : "20px" ,
+                backgroundColor: "aliceblue",
+                fontSize: "1.5em"
             }
         }>
             <Form.Group className="mb-3">

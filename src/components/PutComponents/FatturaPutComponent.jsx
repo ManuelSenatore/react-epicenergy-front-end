@@ -7,48 +7,47 @@ import { Button , Form , Row } from "react-bootstrap";
 import ModalDeleteComponent from "../DeleteComponents/ModalDeleteComponent";
 
 const FatturaPutComponent = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate ()
     const clienti = useSelector ( (state) => state.client.clientList );
-    const fatture = useSelector(state => state.client.fattureList)
+    const fatture = useSelector ( state => state.client.fattureList )
 
-    const token = useSelector(state => state.user.user.token)
-    const dispatch = useDispatch()
+    const token = useSelector ( state => state.user.user.token )
+    const dispatch = useDispatch ()
 
     useEffect ( () => {
-        if ( token === undefined) {
-            navigate("/login")
+        if ( token === undefined ) {
+            navigate ( "/login" )
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[token] );
-
+    } , [ token ] );
 
 
     const [ formObj , setFormObj ] = useState ( {
-        numero: 0,
+        numero : 0 ,
         anno : 0 ,
         importo : 0 ,
         statoFattura : "" ,
         clienteId : 0 ,
     } )
 
-    useEffect(() => {
-        if (formObj.numero !== 0){
-            setFormObj( {
-                numero: createFormObj(formObj).numero,
-                anno : createFormObj(formObj).anno ,
-                importo : createFormObj(formObj).importo ,
-                statoFattura : createFormObj(formObj).statoFattura,
-                clienteId : createFormObj(formObj).cliente.clienteId ,
-            })
+    useEffect ( () => {
+        if ( formObj.numero !== 0 ) {
+            setFormObj ( {
+                numero : createFormObj ( formObj ).numero ,
+                anno : createFormObj ( formObj ).anno ,
+                importo : createFormObj ( formObj ).importo ,
+                statoFattura : createFormObj ( formObj ).statoFattura ,
+                clienteId : createFormObj ( formObj ).cliente.clienteId ,
+            } )
         }
-    }, [formObj.numero])
+    } , [ formObj.numero ] )
 
     const dispatchClientList = () => {
-        dispatch(getClientList(token))
+        dispatch ( getClientList ( token ) )
     }
 
     const dispatchFattureList = () => {
-        dispatch(getFattureList(token))
+        dispatch ( getFattureList ( token ) )
     }
 
     const handleForm = (key , value) => {
@@ -62,20 +61,21 @@ const FatturaPutComponent = () => {
     };
 
     const createFormObj = (obj) => {
-        if (obj.numero !== 0) {
-            return fatture.find(el => el.numero === obj.numero)
+        if ( obj.numero !== 0 ) {
+            return fatture.find ( el => el.numero === obj.numero )
         }
     }
 
     const maker = () => {
         let arr = []
 
-        fatture.forEach( (e) => {
+        fatture.forEach ( (e) => {
             let obj = {
-                id : e.numero,
-                value : e.cliente.nomeContatto+ " " + e.cliente.cognomeContatto + ", Importo: " + e.importo + ", Anno: " + e.anno + ", Stato: " + e.statoFattura
+                id : e.numero ,
+                value : e.cliente.nomeContatto + " " + e.cliente.cognomeContatto + ", Importo: " + e.importo +
+                    ", Anno: " + e.anno + ", Stato: " + e.statoFattura
             }
-            arr.push( obj );
+            arr.push ( obj );
         } )
         return arr
     }
@@ -83,18 +83,18 @@ const FatturaPutComponent = () => {
     const maker2 = () => {
         let arr = []
 
-        clienti.forEach( (e) => {
+        clienti.forEach ( (e) => {
             let obj = {
-                id : e.clienteId,
+                id : e.clienteId ,
                 value : e.nomeContatto + ", " + e.cognomeContatto + ", " + e.ragioneSociale
             }
-            arr.push( obj );
+            arr.push ( obj );
         } )
         return arr
     }
 
     const putFattura = async () => {
-        const baseEndpoint = `http://localhost:8080/api/fatture/${formObj.numero}`;
+        const baseEndpoint = `http://localhost:8080/api/fatture/${ formObj.numero }`;
         const header = {
             Authorization : `Bearer ${ token }` ,
             "Content-Type" : "application/json" ,
@@ -116,16 +116,18 @@ const FatturaPutComponent = () => {
         }
     };
 
-console.log(formObj)
+    console.log ( formObj )
 
     return (
         <div style={
-    {
-        color : "royalblue" ,
-            borderRadius : "5px" ,
-        padding : "20px" ,
-    }
-}>
+            {
+                color : "royalblue" ,
+                borderRadius : "5px" ,
+                padding : "20px" ,
+                backgroundColor: "aliceblue",
+                fontSize: "1.5em"
+            }
+        }>
             <Row>
                 <div className="my-3">
                     <MyDatalistInput
@@ -141,10 +143,10 @@ console.log(formObj)
             </Row>
             {
                 formObj.numero > 0 && (
-                    <Form onSubmit={(e) => {
-                        e.preventDefault()
-                        putFattura()
-                    }}>
+                    <Form onSubmit={ (e) => {
+                        e.preventDefault ()
+                        putFattura ()
+                    } }>
                         <Form.Group className="mb-3">
                             <Form.Label>Anno</Form.Label>
                             <Form.Control
@@ -168,7 +170,7 @@ console.log(formObj)
                         <Form.Group className="mb-3">
                             <Form.Label>Stato fattura</Form.Label>
                             <Form.Select
-                                value={formObj.statoFattura}
+                                value={ formObj.statoFattura }
                                 onChange={ (e) => handleForm ( "statoFattura" , e.target.value ) }
                                 placeholder="Selezione lo stato della fattura"
                             >
@@ -188,7 +190,7 @@ console.log(formObj)
                             choice={ "id" }
                         />
                         <Button
-                            className={"w-25 mt-3 d-block mx-auto"}
+                            className={ "w-25 mt-3 d-block mx-auto" }
                             variant="primary"
                             type="submit">
                             Conferma modifiche
@@ -197,7 +199,7 @@ console.log(formObj)
                 )
             }
 
-            <ModalDeleteComponent />
+            <ModalDeleteComponent/>
 
 
         </div>
