@@ -13,8 +13,8 @@
     cursor: pointer;
 }
 
-.openSettings:active {
-    transform:scale(2);
+.openSettings:hover {
+    opacity: .50;
 }
 
 .hideSettings {
@@ -22,9 +22,10 @@
     transform: scale(3);
 }
 
-.hideSettings:active {
-    transform: rotate(180deg) scale(2);
+.hideSettings:hover {
+    opacity: .50;
 }
+
 
 /*DATALIST*/
 /*FINESTRA CHE SI APRE DEL DATALIST*/

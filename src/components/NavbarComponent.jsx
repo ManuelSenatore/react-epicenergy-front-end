@@ -100,9 +100,10 @@ function NavbarComponent() {
                 <p
                     style={{
                       color: "royalblue",
-                      fontWeight: "bold"
+                      fontWeight: "bold",
+                      textAlign: "center"
                     }}
-                    className="text-end">{user.username}</p>
+                    >Autenticato come {user.username}</p>
               <div
                 style={{
                   height: "40px",

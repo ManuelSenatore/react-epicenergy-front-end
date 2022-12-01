@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5a23b2ff-3535-4ece-8740-5769e3fe9d1a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomeComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomeComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PostComponents/AddressPostComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostComponents/AddressPostComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GetComponents/CardClienteComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetComponents/CardClienteComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GetComponents/CardUserComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetComponents/CardUserComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GetComponents/ClientiComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GetComponents/ClientiComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/NavbarComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/NavbarComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PostComponents/LoginComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostComponents/LoginComponent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/PostComponents/SignUpComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PostComponents/SignUpComponent.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +81,10 @@
       <workItem from="1669152053127" duration="18313000" />
       <workItem from="1669231754046" duration="22334000" />
       <workItem from="1669364678770" duration="32479000" />
-      <workItem from="1669462987414" duration="25437000" />
+      <workItem from="1669462987414" duration="26694000" />
+      <workItem from="1669630946095" duration="2886000" />
+      <workItem from="1669759198805" duration="1244000" />
+      <workItem from="1669928135721" duration="4214000" />
     </task>
     <servers />
   </component>

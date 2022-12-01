@@ -62,7 +62,7 @@ const ClientiComponent = () => {
                     e.preventDefault ();
                     dispatch(getClientListByParams(token, formObj.stringa, formObj.value, formObj.value2));
                 } }>
-            <Form.Group className="mb-5 ">
+            <Form.Group className="mb-2 ">
               <Form.Select
                 onChange={(e) => handleForm("stringa", e.target.value)}
               >
@@ -70,7 +70,7 @@ const ClientiComponent = () => {
                 <option value={"filter-data-inserimento"}>
                     Cerca per: Data Inserimento
                 </option>
-                <option value={"fatturato"}>Cerca per: Fatturato</option>
+                <option value={"fatturato"}>Cerca per: Fatturato minore di</option>
                 <option value={"filter-nome-cognome"}>Cerca per: Nome e Cognome</option>
               </Form.Select>
             </Form.Group>
@@ -79,7 +79,7 @@ const ClientiComponent = () => {
               <Form.Group className="d-flex mb-2">
                 <Form.Control
                   type="number"
-                  placeholder="Fatturato"
+                  placeholder="Importo"
                   className="me-2 "
                   onChange={(e) => handleForm("value", e.target.value)}
                   style={{}}

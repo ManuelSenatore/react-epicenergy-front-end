@@ -91,22 +91,22 @@ const CardClienteComponent = (props) => {
 
                     <ListGroup className="list-group-flush d-flex flex-row justify-content-evenly flex-wrap">
 
-                        <ListGroup.Item className="borderBottomInfo w-25">
+                        <ListGroup.Item className="borderBottomInfo mt-2 w-25">
                             <b>Fatturato</b> <br/>
                             { props.cliente.fatturatoAnnuo }
                         </ListGroup.Item>
-                        <ListGroup.Item className="borderBottomInfo w-25">
+                        <ListGroup.Item className="borderBottomInfo mt-2 w-25">
                             <b>Ragione sociale</b> <br/>
                             { props.cliente.ragioneSociale }
                         </ListGroup.Item>
-                        <ListGroup.Item className="borderBottomInfo w-25">
+                        <ListGroup.Item className="borderBottomInfo mt-2 w-25">
                             <b>Partita IVA</b> <br/>
                             { props.cliente.partitaIva }
                         </ListGroup.Item>
-                        <ListGroup.Item className="borderBottomInfo"><b>Seguito da</b> <br/>
+                        <ListGroup.Item className="borderBottomInfo mt-2"><b>Seguito da</b> <br/>
                             { props.cliente.user.username }
                         </ListGroup.Item>
-                        <ListGroup.Item className="borderBottomInfo">
+                        <ListGroup.Item className="borderBottomInfo mt-2">
                             <b>Data ultimocontatto</b> <br/>
                             { props.cliente.dataUltimoContatto }
 
@@ -122,23 +122,23 @@ const CardClienteComponent = (props) => {
                         infoFlag && (
                             <ListGroup className="list-group-flush d-flex flex-row justify-content-evenly flex-wrap">
 
-                                <ListGroup.Item className="borderBottomInfo">
+                                <ListGroup.Item className="borderBottomInfo mt-2">
                                     <b>Telefono</b> <br/>
                                     { props.cliente.telefonoContatto }
                                 </ListGroup.Item>
-                                <ListGroup.Item className="borderBottomInfo">
+                                <ListGroup.Item className="borderBottomInfo mt-2">
                                     <b>Email</b> <br/>
                                     { props.cliente.email }
                                 </ListGroup.Item>
-                                <ListGroup.Item className="borderBottomInfo">
+                                <ListGroup.Item className="borderBottomInfo mt-2">
                                     <b>Email contatto</b> <br/>
                                     { props.cliente.emailContatto }
                                 </ListGroup.Item>
-                                <ListGroup.Item className="borderBottomInfo">
+                                <ListGroup.Item className="borderBottomInfo mt-2">
                                     <b>PEC</b> <br/> { props.cliente.pec }
                                 </ListGroup.Item>
                                 <ListGroup.Item
-                                    className="borderBottomInfo"
+                                    className="borderBottomInfo mt-2"
                                 ><b>Data di registrazione </b> <br/>
                                     { props.cliente.dataInserimento }
                                 </ListGroup.Item>

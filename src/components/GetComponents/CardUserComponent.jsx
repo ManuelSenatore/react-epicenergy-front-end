@@ -1,7 +1,7 @@
 import React , { useState } from "react";
-import { Button , Card , Col , ListGroup } from "react-bootstrap";
+import {  Card , ListGroup } from "react-bootstrap";
 import { useDispatch , useSelector } from "react-redux";
-import { getClientList , getClientListFromUser , getFattureList , getUserList } from "../../redux/actions/actions";
+import { getUserList } from "../../redux/actions/actions";
 import { useNavigate } from "react-router-dom";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import ModalDeleteComponent from "../DeleteComponents/ModalDeleteComponent";
@@ -143,20 +143,24 @@ const CardUserComponent = (props) => {
                         className={ infoFlag ? "openInfoTrue my-4" : "openInfo my-2" }
                     ></div>
                     { infoFlag && (
-                        <ListGroup className="list-group-flush d-flex flex-row justify-content-evenly flex-wrap">
-                            { clientList?.map ( (client , index) => {
-                                return (
-                                    <ListGroup.Item key={ index } className="borderBottomInfo w-100">
-                                        CLIENTE N.
-                                        { client.clienteId +
-                                            " " +
-                                            client.nomeContatto +
-                                            " " +
-                                            client.cognomeContatto }
-                                    </ListGroup.Item>
-                                );
-                            } ) }
-                        </ListGroup>
+                        <>
+                            <h6>Lista clienti seguiti</h6>
+                            <ListGroup className="list-group-flush d-flex flex-column justify-content-evenly flex-wrap">
+                                { clientList?.map ( (client , index) => {
+                                    return (
+                                        <ListGroup.Item key={ index } className="borderBottomInfo w-50 m-auto">
+                                            CLIENTE N.
+                                            { client.clienteId +
+                                                " " +
+                                                client.nomeContatto +
+                                                " " +
+                                                client.cognomeContatto }
+                                        </ListGroup.Item>
+                                    );
+                                } ) }
+                            </ListGroup>
+                        </>
+
                     ) }
                 </Card.Body>
             </Card>

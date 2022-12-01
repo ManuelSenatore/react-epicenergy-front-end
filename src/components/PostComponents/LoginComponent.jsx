@@ -1,5 +1,5 @@
 import React , { useEffect , useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form , Button , Container , Col , Row , Card } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom"
 import { useDispatch , useSelector } from "react-redux";
 import { logIn } from "../../redux/actions/actions";
@@ -44,53 +44,57 @@ function LoginComponent() {
 
 
     return (
-        <div style={
+        <Container  fluid style={
             {
                 color: "royalblue",
                 borderRadius: "5px",
                 padding: "20px",
                 backgroundColor: "aliceblue",
-                fontSize: "1.5em"
+                fontSize: "1.5em",
+                height: '100%'
             }
         }>
-            <Form onSubmit={(e) => {
-                e.preventDefault()
-                dispatch(logIn(formObj))
-                console.log(user)
-                // navigate('/home')
-            }}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Nome utente</Form.Label>
-                    <Form.Control
-                        value={formObj.username}
-                        onChange={(e) => handleForm("username", e.target.value)}
-                        type="text"
-                        autoComplete="current-password"
-                        placeholder="Inserisci il nome utente scelto in fase di registrazione" />
-                    <Form.Text className="text-muted">
-                        Non condividere mai la password con nessuno.
-                    </Form.Text>
-                </Form.Group>
+            <Card className={'w-50 m-auto'}>
+                <Row className={'d-flex m-auto justify-content-center align-items-center'}>
+                    <Col>
+                        <Form onSubmit={(e) => {
+                            e.preventDefault()
+                            dispatch(logIn(formObj))
+                        }}>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label>Nome utente</Form.Label>
+                                <Form.Control
+                                    value={formObj.username}
+                                    onChange={(e) => handleForm("username", e.target.value)}
+                                    type="text"
+                                    autoComplete="current-password"
+                                    placeholder="Inserisci il nome utente scelto in fase di registrazione" />
+                            </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                        value={formObj.password}
-                        onChange={(e) => handleForm("password",e.target.value)}
-                        type="password"
-                        autoComplete="current-password"
-                        placeholder="Inserisci la tua password" />
-                </Form.Group>
-                <Button className={"w-25 d-block mx-auto my-2"} variant="primary" type="submit">
-                    ACCEDI
-                </Button>
-            </Form>
+                            <Form.Group className="mb-3" controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control
+                                    value={formObj.password}
+                                    onChange={(e) => handleForm("password",e.target.value)}
+                                    type="password"
+                                    autoComplete="current-password"
+                                    placeholder="Inserisci la tua password" />
+                            </Form.Group>
+                            <Button className={"w-25 d-block mx-auto my-2"} variant="primary" type="submit">
+                                ACCEDI
+                            </Button>
+                        </Form>
 
-            <Link to = "/signup">
-            <p className={"w-25 d-block text-center mx-auto my-2"}>Se non sei registrato clicca a qui.</p>
-            </Link>
+                        <Link to = "/signup">
+                            <p className={"w-25 d-block w-100 text-center mx-auto my-2"}>Se non sei registrato clicca a qui.</p>
+                        </Link>
+                    </Col>
+                </Row>
+            </Card>
 
-        </div>
+
+
+        </Container>
     );
 }
 
